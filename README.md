@@ -9,7 +9,7 @@ Database of Star Wars ships.
     - All uniques
     - By name
   - Size
-    - Exact
+    - Exact (in meters)
     - Larger than (in meters)
     - Smaller than (in meters)
   - Manufacturer
