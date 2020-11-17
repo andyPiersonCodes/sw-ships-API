@@ -6,6 +6,7 @@ const port = 1337
 const {
   getIndex,
   getAllships,
+  searchShips,
   notFound
 } = require('./controllers/search')
 const app = express()
@@ -16,6 +17,8 @@ app.use(express.static('public'))
 app.get('/', getIndex)
 
 app.get('/ships', getAllships)
+
+app.get('/ships/:search', searchShips)
 
 app.all('*', notFound)
 
