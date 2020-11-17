@@ -1,24 +1,21 @@
 /* eslint-disable no-console */
 const express = require('express')
-const ships = require('./ships')
 const port = 1337
+const {
+  getIndex,
+  getAllships,
+  notFound
+} = require('./controllers/search')
 const app = express()
 
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/', (request, response) => {
-  return response.render('index', { ships })
-})
+app.get('/', getIndex)
 
-app.get('/ships', (request, response) => {
-  return response.render('ships', { ships })
-})
+app.get('/ships', getAllships)
 
-
-app.all('*', (request, response) => {
-  return response.sendStatus(404)
-})
+app.all('*', notFound)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
