@@ -1,7 +1,8 @@
 html
     include partials/head.pug
     body
-        h1 Star Wars Ships
-            h2 Ships:
+        h1 Star Wars Ships (Index Page)
+            h2 Ships
             ul
-                li= ships[0].name
+                li
+                    a(href=`/ships`)= `localhost:1337/ships gives you a list of all ships`

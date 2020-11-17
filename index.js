@@ -11,6 +11,10 @@ app.get('/', (request, response) => {
   return response.render('index', { ships })
 })
 
+app.get('/ships', (request, response) => {
+  return response.render('ships', { ships })
+})
+
 
 app.all('*', (request, response) => {
   return response.sendStatus(404)
