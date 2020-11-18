@@ -1,8 +1,19 @@
 html
     include partials/head.pug
     body
-        h1 Star Wars Ships (Index Page)
-            h2 Ships
+        h1 Welcome to Star Wars Ships API
+            h2 This database will hold information about a variety of ships in Star Wars (including Expanded Universe!)
+            <div class= 'sdIMG'> <img src="/images/star-destroyer.png" style="width:250px"></div>
             ul
                 li
                     a(href=`/ships`)= `localhost:1337/ships gives you a list of all ships`
+
+            h2 You will soon be able to seach by:
+            ul
+                li Type of ship
+                li Size of Ship (in meters)
+                li Manufacturer
+                li Armament / Weapons
+                li Affiliations
+                li Uniquness of a ship
+                li Slugs

@@ -5,7 +5,8 @@ const ships = [{
   manufacturer: 'Kuat Drive Yards',
   weapons: ['Turbo Lasers', 'Laser Cannons', 'Tractor Beams'],
   affiliations: ['Imperial', 'Rebels', 'Pirates'],
-  isUnique: 'No'
+  isUnique: 'No',
+  slug: 'nebulon-b',
 }, {
   name: 'Star Destroyer',
   type: 'Cruiser',
@@ -13,7 +14,8 @@ const ships = [{
   manufacturer: 'Kuat Drive Yards',
   weapons: ['Turbo Lasers', 'Laser Cannons', 'Tractor Beams'],
   affiliations: ['Imperial'],
-  isUnique: 'No'
+  isUnique: 'No',
+  slug: 'star-destroyer'
 }, {
   name: 'TIE Fighter',
   type: 'Starfighter',
@@ -21,7 +23,8 @@ const ships = [{
   manufacturer: 'Sienar Fleet Systems',
   weapons: ['Laser Cannons'],
   affiliations: ['Imperial'],
-  isUnique: 'No'
+  isUnique: 'No',
+  slug: 'tie-fighter'
 }, {
   name: 'X-Wing',
   type: 'Starfighter',
@@ -29,7 +32,8 @@ const ships = [{
   manufacturer: 'Incom Corporation',
   weapons: ['Laser Cannons', 'Proton Torpedoes'],
   affiliations: ['Rebels'],
-  isUnique: 'No'
+  isUnique: 'No',
+  slug: 'x-wing'
 }, {
   name: 'Millennium Falcon',
   type: 'Freighter',
@@ -37,7 +41,8 @@ const ships = [{
   manufacturer: 'Corellian Engineering Corporation',
   weapons: ['Quad Laser Cannons', 'Tractor Beams', 'Concussion Missiles'],
   affiliations: ['Smugglers', 'Rebels', 'Hutt Cartel'],
-  isUnique: 'Yes'
+  isUnique: 'Yes',
+  slug: 'millennium-falcon'
 }]
 
 module.exports = ships
