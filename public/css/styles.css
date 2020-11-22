@@ -18,7 +18,7 @@ img{
     width: 65%;
 }
 
-.intro{
+.titles{
     font-size: 2vw;
 }
 
@@ -26,9 +26,6 @@ li {
     list-style: none;
 }
 
-p{
-    font-size: 1.5vw;
-}
 table, th,tr, td {
     /*
     background-color: white;
@@ -37,6 +34,10 @@ table, th,tr, td {
     border-collapse: collapse;
     margin: 0 auto;
     padding: 10px;
+}
+
+.refs{
+    font-size: 1.5vw;
 }
 
 .sidebar {
