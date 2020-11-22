@@ -10,7 +10,7 @@ DROP TABLE ships;
 CREATE TABLE ships (
     id INT AUTO_INCREMENT,
     name VARCHAR(255),
-    type VARCHAR(255),
+    class VARCHAR(255),
     size INT,
     manufacturer VARCHAR(255),
     weapons,
@@ -27,7 +27,7 @@ SHOW TABLES;
 
 DESC ships;
 
-INSERT INTO villains (name, type, size, manufacturer, weapons, affiliation, isUnique,slug) VALUES
+INSERT INTO villains (name, class, size, manufacturer, weapons, affiliation, isUnique,slug) VALUES
  ('Captain Hook','Peter Pan','captain-hook'),
  ('Cruella de Vil','One Hundred and One Dalmatians','cruella-de-vil'),
  ('Gaston','Beauty and the Beast','gaston'),
