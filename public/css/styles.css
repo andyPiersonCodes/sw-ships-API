@@ -27,16 +27,18 @@ li {
 }
 
 table, th,tr, td {
-    /*
-    background-color: white;
-    color: black;
-    */
     border-collapse: collapse;
     margin: 0 auto;
     padding: 10px;
 }
 
-.refs{
+.jsonExample{
+    font-style: italic;
+    padding-left: 1.5em;
+    color: lightblue;
+}
+
+.refs, .jsonExample{
     font-size: 1.5vw;
 }
 

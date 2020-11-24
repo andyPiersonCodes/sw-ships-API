@@ -4,8 +4,10 @@ html
     div.sidebar
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
-        <a href="#ids">IDs</a>
-        <a href="#manufacturer">Manufacturers</a> 
+        
+        a(href="#ids")=`IDs`
+        a(href="#manufacturer")=`Manufacturers`
+        a(href="#classes")=`Classes`
 
     div.content
         <img src="./images/sw-logo2.png">
@@ -14,9 +16,17 @@ html
             p.refs This API is about helping you find the perfect Star Wars ship for you.
     
         h3.titles API References
-             p.refs Sample Slug API Call
-             p.refs http://localhost:port/ships/nebulon-b
-             p.refs Show sample response here
+            p.refs Sample Slug API Call
+            p.refs http://localhost:port/ships/nebulon-b
+            p.jsonExample name: 'Nebulon B',
+            p.jsonExample type: 'Frigate',
+            p.jsonExample size: 300,
+            p.jsonExample manufacturer: 'Kuat Drive Yards',
+            p.jsonExample weapons: ['Turbo Lasers', 'Laser Cannons', 'Tractor Beams'],
+            p.jsonExample affiliations: ['Imperial', 'Rebels', 'Pirates'],
+            p.jsonExample isUnique: 'No',
+            p.jsonExample slug: 'nebulon-b',
+ 
 
         table
             tr
@@ -33,16 +43,21 @@ html
                 td /ships/id
                 td GET
                 td Return JSON of ship by id
-
-            tr
-                td /ships/class
-                td GET
-                td Return JSON of ship by type
           
             tr
                 td /ships/manufacturer
                 td GET
                 td Return JSON of ships by manufacturer
+
+            tr
+                td /ships/class
+                td GET
+                td Return JSON of ship by class
+
+            tr
+                td /ships/uniques
+                td GET
+                td Return JSON of all unique named ships
 
             tr
                 td /ships/slug
