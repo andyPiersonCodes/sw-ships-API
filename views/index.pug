@@ -4,9 +4,8 @@ html
     div.sidebar
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
-        
-        a(href="#ids")=`IDs`
-        a(href="#manufacturer")=`Manufacturers`
+        a(href= `#shipIds`)=`IDs`
+        a(href=`#manufacturers`)=`Manufacturers`
         a(href="#classes")=`Classes`
 
     div.content
@@ -16,7 +15,7 @@ html
             p.refs This API is about helping you find the perfect Star Wars ship for you.
     
         h3.titles API References
-            p.refs Sample Slug API Call
+        p.refs Sample Slug API Call
             p.refs http://localhost:port/ships/nebulon-b
             p.jsonExample name: 'Nebulon B',
             p.jsonExample type: 'Frigate',
@@ -63,4 +62,148 @@ html
                 td /ships/slug
                 td GET
                 td Return JSON of a ship by friendly name
-    </div>
+
+
+        <h3 id='shipIds', class= 'titles'> Ship IDs </h3>
+        table  
+            tr
+                th ID
+                th Ship
+            tr
+                td 1
+                td Nebulon B
+            tr
+                td 2
+                td Star Destroyer
+            tr
+                td 3
+                td TIE Fighter
+            tr
+                td 4
+                td X-Wing
+            tr
+                td 5
+                td Millennium Falcon
+            tr
+                td 6
+                td Home One
+            tr
+                td 7
+                td Mon Calmari Cruiser
+            tr
+                td 8
+                td Imperial Landing Craft
+            tr
+                td 9
+                td Gallofree Transport
+            tr
+                td 10
+                td CR 90
+            tr
+                td 11
+                td Naboo Royal Cruiser
+            tr
+                td 12
+                td Acclamator Assault Ship
+            tr
+                td 13
+                td Star Freighter
+            tr
+                td 14
+                td A-Wing
+            tr
+                td 15
+                td B-Wing
+            tr
+                td 16
+                td E-Wing
+            tr
+                td 17
+                td Y-Wing
+            tr
+                td 18
+                td TIE Bomber
+            tr
+                td 19
+                td TIE Advanced
+            tr
+                td 20
+                td TIE Defender
+            tr
+                td 21
+                td Lucrehulk Battleship
+            tr
+                td 22
+                td Super Star Destroyer
+            tr
+                td 23
+                td YR-2400
+            tr
+                td 24
+                td Razor Crest
+            tr
+                td 25
+                td Bespin Twin Pod Cloud Car
+            tr
+                td 26
+                td Hounds Tooth
+            tr
+                td 27
+                td Vulture Droid
+            tr
+                td 28
+                td Slave I
+            tr
+                td 29
+                td Moldy Crow
+            tr
+                td 30
+                td Quadjumper
+            tr
+                td 31
+                td Death Star
+            tr
+                td 32
+                td Death Star II
+
+
+        <h3 id='manufacturers', class= 'titles'> Manufacturers </h3>
+        table  
+            tr
+                th Starship Manufacturers
+            tr 
+                td Corellian Engineering Corporation (CEC)
+            tr 
+                td Cygnus Spaceworks
+            tr 
+                td Hapan Ships
+            tr 
+                td Hoersh-Kessel Drive, Inc
+            tr 
+                td Incom Corporation
+            tr 
+                td Kuat Drive Yards (KDY)
+            tr 
+                td Kuat Systems Engineering
+            tr 
+                td Loronar Corporation
+            tr 
+                td Mon Calmari Shipyards
+            tr 
+                td Mandal Motors
+            tr 
+                td Repuiblic Enmgineering Corp
+            tr
+                td Rendili StarDrive
+            tr
+                td Sienar Fleet Systems
+            tr
+                td Silviut Corporation
+            tr
+                td SoroSuub
+            tr
+                td Ssi-Ruuk
+            tr
+                td Telgorn Corp.
+                
+        </div>

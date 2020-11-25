@@ -1,7 +1,15 @@
 html
     include partials/head.pug
     body
-        h1 Ships (test table)
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        
+        a(href="#ids")=`IDs`
+        a(href="#manufacturer")=`Manufacturers`
+        a(href="#classes")=`Classes`
+
+    h1 Ships (test table)
             h3
             ul
                 li

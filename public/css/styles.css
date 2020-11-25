@@ -18,8 +18,13 @@ img{
     width: 65%;
 }
 
+#shipIds{
+    padding-top: 6em;
+}
+
 .titles{
     font-size: 2vw;
+    text-align: center;
 }
 
 li {
