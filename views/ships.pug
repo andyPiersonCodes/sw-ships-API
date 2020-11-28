@@ -4,16 +4,12 @@ html
     div.sidebar
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
-        
-        a(href="#ids")=`IDs`
-        a(href="#manufacturer")=`Manufacturers`
-        a(href="#classes")=`Classes`
+        a(href=`./ids`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
 
-    h1 Ships (test table)
-            h3
-            ul
-                li
-                    a(href=`/`)= `Home`
+    div.content
+        h1 Ships (test table)
             table
                 tr
                     th Name

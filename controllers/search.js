@@ -9,6 +9,10 @@ const getAllships = (req, res) => {
   return res.render('ships', { ships })
 }
 
+const showAllIds = (req, res) => {
+  return res.render('ids')
+}
+
 // test for seach, doesnt work currently, find is not a function
 // need to decide if a long seach with a bunch of || is better or break it up into
 // localhost:port/manufacturer localhost:port/type etc etc is better
@@ -31,5 +35,6 @@ module.exports = {
   getIndex,
   getAllships,
   searchShips,
+  showAllIds,
   notFound
 }

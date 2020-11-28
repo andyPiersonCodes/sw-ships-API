@@ -4,9 +4,9 @@ html
     div.sidebar
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
-        a(href= `#shipIds`)=`IDs`
-        a(href=`#manufacturers`)=`Manufacturers`
-        a(href="#classes")=`Classes`
+        a(href=`./ids`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
 
     div.content
         <img src="./images/sw-logo2.png">
@@ -16,6 +16,7 @@ html
     
         h3.titles API References
         p.refs Sample Slug API Call
+            <div>
             p.refs http://localhost:port/ships/nebulon-b
             p.jsonExample name: 'Nebulon B',
             p.jsonExample type: 'Frigate',
@@ -25,7 +26,7 @@ html
             p.jsonExample affiliations: ['Imperial', 'Rebels', 'Pirates'],
             p.jsonExample isUnique: 'No',
             p.jsonExample slug: 'nebulon-b',
- 
+            </div>
 
         table
             tr
@@ -39,7 +40,7 @@ html
                 td Return JSON of all ships
             
             tr
-                td /ships/id
+                td /ships/id#
                 td GET
                 td Return JSON of ship by id
           
@@ -171,39 +172,57 @@ html
         table  
             tr
                 th Starship Manufacturers
+                th Searchable Name
             tr 
-                td Corellian Engineering Corporation (CEC)
+                td Corellian Engineering Corp
+                td cec
             tr 
                 td Cygnus Spaceworks
+                td cygnus-spaceworks
             tr 
                 td Hapan Ships
+                td hapan-ships
             tr 
-                td Hoersh-Kessel Drive, Inc
+                td Hoersh-Kessel Drive
+                td hkd
             tr 
                 td Incom Corporation
+                td incom-corp
             tr 
-                td Kuat Drive Yards (KDY)
+                td Kuat Drive Yards
+                td kdy
             tr 
                 td Kuat Systems Engineering
+                td kse
             tr 
-                td Loronar Corporation
+                td Loronar Corp.
+                td lonar-corp
             tr 
                 td Mon Calmari Shipyards
+                td mcs
             tr 
                 td Mandal Motors
+                td mandal-motors
             tr 
-                td Repuiblic Enmgineering Corp
+                td Repuiblic Engineering Corp.
+                td rec
             tr
                 td Rendili StarDrive
+                td rendili-stradrive
             tr
                 td Sienar Fleet Systems
+                td sfs
             tr
-                td Silviut Corporation
+                td Silviut Corp.
+                td silviut-corp
             tr
                 td SoroSuub
+                td sorosuub
             tr
                 td Ssi-Ruuk
+                td ssi-ruuk
             tr
                 td Telgorn Corp.
+                td telgorn-corp
                 
         </div>
