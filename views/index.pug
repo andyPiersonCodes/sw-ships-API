@@ -1,0 +1,228 @@
+html
+    include partials/head.pug
+    body
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        a(href=`./ids`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
+
+    div.content
+        <img src="./images/sw-logo2.png">
+        h1 THE API
+        h2.titles Introduction
+            p.refs This API is about helping you find the perfect Star Wars ship for you.
+    
+        h3.titles API References
+        p.refs Sample Slug API Call
+            <div>
+            p.refs http://localhost:port/ships/nebulon-b
+            p.jsonExample name: 'Nebulon B',
+            p.jsonExample type: 'Frigate',
+            p.jsonExample size: 300,
+            p.jsonExample manufacturer: 'Kuat Drive Yards',
+            p.jsonExample weapons: ['Turbo Lasers', 'Laser Cannons', 'Tractor Beams'],
+            p.jsonExample affiliations: ['Imperial', 'Rebels', 'Pirates'],
+            p.jsonExample isUnique: 'No',
+            p.jsonExample slug: 'nebulon-b',
+            </div>
+
+        table
+            tr
+                th Reference
+                th Method
+                th Purpose
+            
+            tr
+                td /ships
+                td GET
+                td Return JSON of all ships
+            
+            tr
+                td /ships/id#
+                td GET
+                td Return JSON of ship by id
+          
+            tr
+                td /ships/manufacturer
+                td GET
+                td Return JSON of ships by manufacturer
+
+            tr
+                td /ships/class
+                td GET
+                td Return JSON of ship by class
+
+            tr
+                td /ships/uniques
+                td GET
+                td Return JSON of all unique named ships
+
+            tr
+                td /ships/slug
+                td GET
+                td Return JSON of a ship by friendly name
+
+
+        <h3 id='shipIds', class= 'titles'> Ship IDs </h3>
+        table  
+            tr
+                th ID
+                th Ship
+            tr
+                td 1
+                td Nebulon B
+            tr
+                td 2
+                td Star Destroyer
+            tr
+                td 3
+                td TIE Fighter
+            tr
+                td 4
+                td X-Wing
+            tr
+                td 5
+                td Millennium Falcon
+            tr
+                td 6
+                td Home One
+            tr
+                td 7
+                td Mon Calmari Cruiser
+            tr
+                td 8
+                td Imperial Landing Craft
+            tr
+                td 9
+                td Gallofree Transport
+            tr
+                td 10
+                td CR 90
+            tr
+                td 11
+                td Naboo Royal Cruiser
+            tr
+                td 12
+                td Acclamator Assault Ship
+            tr
+                td 13
+                td Star Freighter
+            tr
+                td 14
+                td A-Wing
+            tr
+                td 15
+                td B-Wing
+            tr
+                td 16
+                td E-Wing
+            tr
+                td 17
+                td Y-Wing
+            tr
+                td 18
+                td TIE Bomber
+            tr
+                td 19
+                td TIE Advanced
+            tr
+                td 20
+                td TIE Defender
+            tr
+                td 21
+                td Lucrehulk Battleship
+            tr
+                td 22
+                td Super Star Destroyer
+            tr
+                td 23
+                td YR-2400
+            tr
+                td 24
+                td Razor Crest
+            tr
+                td 25
+                td Bespin Twin Pod Cloud Car
+            tr
+                td 26
+                td Hounds Tooth
+            tr
+                td 27
+                td Vulture Droid
+            tr
+                td 28
+                td Slave I
+            tr
+                td 29
+                td Moldy Crow
+            tr
+                td 30
+                td Quadjumper
+            tr
+                td 31
+                td Death Star
+            tr
+                td 32
+                td Death Star II
+
+
+        <h3 id='manufacturers', class= 'titles'> Manufacturers </h3>
+        table  
+            tr
+                th Starship Manufacturers
+                th Searchable Name
+            tr 
+                td Corellian Engineering Corp
+                td cec
+            tr 
+                td Cygnus Spaceworks
+                td cygnus-spaceworks
+            tr 
+                td Hapan Ships
+                td hapan-ships
+            tr 
+                td Hoersh-Kessel Drive
+                td hkd
+            tr 
+                td Incom Corporation
+                td incom-corp
+            tr 
+                td Kuat Drive Yards
+                td kdy
+            tr 
+                td Kuat Systems Engineering
+                td kse
+            tr 
+                td Loronar Corp.
+                td lonar-corp
+            tr 
+                td Mon Calmari Shipyards
+                td mcs
+            tr 
+                td Mandal Motors
+                td mandal-motors
+            tr 
+                td Repuiblic Engineering Corp.
+                td rec
+            tr
+                td Rendili StarDrive
+                td rendili-stradrive
+            tr
+                td Sienar Fleet Systems
+                td sfs
+            tr
+                td Silviut Corp.
+                td silviut-corp
+            tr
+                td SoroSuub
+                td sorosuub
+            tr
+                td Ssi-Ruuk
+                td ssi-ruuk
+            tr
+                td Telgorn Corp.
+                td telgorn-corp
+                
+        </div>

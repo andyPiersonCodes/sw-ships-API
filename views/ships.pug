@@ -1,0 +1,62 @@
+html
+    include partials/head.pug
+    body
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        a(href=`./ids`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
+
+    div.content
+        h1 Ships (test table)
+            table
+                tr
+                    th Name
+                    th Class
+                    th Size (in meters)
+                    th Manufacturer
+                    th Weapons
+                    th Affiliations
+                    th Uniqueness
+
+                tr
+                    td Nebulon B
+                    td Frigate
+                    td 300
+                    td Kuat Drive Yards
+                    td Turbo Lasers, Laser Cannons, Tractor Beams
+                    td Imperial, Rebels, Pirates
+                    td No
+                tr
+                    td Star Destroyer
+                    td Cruiser
+                    td 1600
+                    td Kuat Drive Yards
+                    td Turbo Lasers, Laser Cannons, Tractor Beams
+                    td Imperial
+                    td No
+                tr
+                    td TIE Fighter
+                    td Starfighter
+                    td 7
+                    td Sienar Fleet Systems
+                    td Laser Cannons
+                    td Imperial
+                    td No
+                tr
+                    td X-Wing
+                    td Starfighter
+                    td 13
+                    td Incom Corporation
+                    td Laser Cannons, Proton Torpedoes
+                    td Rebels
+                    td No
+                tr
+                    td Millennium Falcon
+                    td Freighter
+                    td 34
+                    td Corellian Engineering Corporation
+                    td Quad Laser Cannons, Tractor Beams, Concussion Missiles
+                    td Smugglers, Rebels, Hutt Cartel
+                    td Yes
