@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const shipsModel = require('./swships')
+const shipsModel = require('./ships')
 
 const connection = new Sequelize('DBNAME', 'USER', 'PW', {
   host: 'localhost', dialect: 'mysql'
