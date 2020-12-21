@@ -14,4 +14,10 @@ const Ships = ShipsModel(connection, Sequelize)
 const Weapons = WeaponsModel(connection, Sequelize, Ships)
 const Affiliations = AffiliationsModel(connection, Sequelize, Ships)
 
+Weapons.belongsTo(Ships)
+Ships.hasMany(Weapons)
+
+Affiliations.belongsTo(Ships)
+Ships.hasMany(Affiliations)
+
 module.exports = { Ships, Weapons, Affiliations }
