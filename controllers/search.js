@@ -1,12 +1,19 @@
 /* eslint-disable no-console */
 const ships = require('../ships')
+const models = require('../models')
 
 const getIndex = (req, res) => {
   return res.render('index', { ships })
 }
 
-const getAllships = (req, res) => {
-  return res.render('ships', { ships })
+const getAllShips = async (req, res) => {
+  const ships = await models.Ships.findAll({
+    include: [{ model: models.Weapons, attributes: ['name'] },
+      { model: models.Affiliations, attributes: ['name'] }
+    ],
+  })
+
+  return res.send(ships)
 }
 
 const showAllIds = (req, res) => {
@@ -33,7 +40,7 @@ const notFound = (req, res) => {
 
 module.exports = {
   getIndex,
-  getAllships,
+  getAllShips,
   searchShips,
   showAllIds,
   notFound

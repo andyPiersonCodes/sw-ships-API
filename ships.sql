@@ -32,20 +32,20 @@ CREATE TABLE weapons (
   createdAt DATETIME DEFAULT NOW(),
   updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
   deletedAt DATETIME,
-  PRIMARY KEY(id)
+  PRIMARY KEY(id),
   FOREIGN KEY (shipId) REFERENCES ships(id)
 );
 
 CREATE TABLE  affiliations (
     id INT auto_increment,
-    name VARCHAR(255)
+    name VARCHAR(255),
     shipId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME,
     PRIMARY KEY(id),
     FOREIGN KEY (shipId) REFERENCES ships(id)
-)
+);
 
 SHOW TABLES;
 
@@ -53,18 +53,19 @@ DESC ships;
 
 INSERT INTO ships (name, manufacturer,class, size, isUnique, slug) VALUES
 ('A Wing','Kuat Systems Engineering','interceptor',7,'no','a-wing'),
-('AA-9 Coruscant Freighter','Botajef Shipyards','Freighter',390, 'no','aa-9-coruscant-freighter')
+('AA-9 Coruscant Freighter','Botajef Shipyards','Freighter',390, 'no','aa-9-coruscant-freighter');
 
 INSERT INTO weapons (name, shipId) VALUES
  ('laser cannons',1),
  ('concussion missiles',1),
- ('None', 2),
+ ('None', 2);
 
 INSERT INTO affiliations (name, shipId) VALUES
  ('Rebels', 1),
  ('New Republic', 1),
- ('Imperial', 2),
+ ('Imperial', 2);
 SELECT * from ships;
-
+SELECT * from affiliations;
+SELECT * from weapons;
 
 

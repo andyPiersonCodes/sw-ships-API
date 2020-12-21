@@ -4,10 +4,11 @@ const ShipsModel = require('./ships')
 const WeaponsModel = require('./weapons')
 const AffiliationsModel = require('./affiliations')
 const environment = process.env.NODE_ENV || 'development'
+// eslint-disable-next-line no-unused-vars
 const config = allConfigs[environment]
 
-const connection = new Sequelize(config.database, config.username, config.password, {
-  host: config.host, dialect: config.dialect
+const connection = new Sequelize('starWars', 'sithLord', 'GLucas514!', {
+  host: 'localhost', dialect: 'mysql'
 })
 
 const Ships = ShipsModel(connection, Sequelize)

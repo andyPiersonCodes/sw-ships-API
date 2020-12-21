@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const port = 1338
 const {
   getIndex,
-  getAllships,
+  getAllShips,
   searchShips,
   showAllIds,
   notFound
@@ -17,7 +17,7 @@ app.use(express.static('public'))
 
 app.get('/', getIndex)
 
-app.get('/ships', getAllships)
+app.get('/ships', getAllShips)
 
 app.get('/ids', showAllIds)
 
