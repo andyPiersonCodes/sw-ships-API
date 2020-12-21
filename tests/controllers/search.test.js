@@ -7,8 +7,8 @@ const models = require('../../models')
 const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
-const { shipsList, singleShip } = require('../mocks/ships')
-const { getAllShips, getShipsById } = require('../../controllers/search')
+const { shipsList, singleShip, newShip } = require('../mocks/ships')
+const { getAllShips, getShipsById, saveNewShip } = require('../../controllers/search')
 
 chai.use(sinonChai)
 const { expect } = chai
@@ -103,6 +103,18 @@ describe('Controllers - ships', () => {
       })
       expect(stubbedStatus).to.have.been.calledWith(500)
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
+    })
+  })
+  describe('saveNewShip', () => {
+    it('accepts new ship details and saves them as a new ship, returning the saved record with a 201 status', async () => {
+      const request = { body: newShip }
+      const stubbedCreate = sinon.stub(models.Ships, 'create').returns(newShip)
+
+      await saveNewShip(request, response)
+
+      expect(stubbedCreate).to.have.been.calledWith(newShip)
+      expect(stubbedStatus).to.have.been.calledWith(201)
+      expect(stubbedStatusSend).to.have.been.calledWith(newShip)
     })
   })
 })
