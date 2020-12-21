@@ -20,19 +20,21 @@ const showAllIds = (req, res) => {
   return res.render('ids')
 }
 
-// test for seach, doesnt work currently, find is not a function
-// need to decide if a long seach with a bunch of || is better or break it up into
-// localhost:port/manufacturer localhost:port/type etc etc is better
-const searchShips = (req, res) => {
-  const { search } = req.params
+const getShipsById = async (req, res) => {
+  const { id } = req.params
 
-  const ship = ships.filter((ship) => {
-    return ship.name.toLowerCase().includes(search.toLowerCase()) ||
-     ship.type.find((type) => type.toLowerCase().includes(search.toLowerCase()))
+  const foundShip = await models.Ships.findOne({
+    where: { id },
+    include: [{ model: models.Weapons, attributes: ['name'] },
+      { model: models.Affiliations, attributes: ['name'] }
+    ],
   })
 
-  return res.send(ship)
+  return foundShip
+    ? res.send(foundShip)
+    : res.status(404).send('404, This is the not  the ship you are looking for')
 }
+
 
 const notFound = (req, res) => {
   return res.sendStatus(400)
@@ -41,7 +43,7 @@ const notFound = (req, res) => {
 module.exports = {
   getIndex,
   getAllShips,
-  searchShips,
   showAllIds,
+  getShipsById,
   notFound
 }

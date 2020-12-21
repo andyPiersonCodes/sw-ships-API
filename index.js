@@ -6,8 +6,8 @@ const port = 1338
 const {
   getIndex,
   getAllShips,
-  searchShips,
   showAllIds,
+  getShipsById,
   notFound
 } = require('./controllers/search')
 const app = express()
@@ -21,7 +21,7 @@ app.get('/ships', getAllShips)
 
 app.get('/ids', showAllIds)
 
-app.get('/ships/:search', searchShips)
+app.get('/ships/:id', getShipsById)
 
 app.all('*', notFound)
 
