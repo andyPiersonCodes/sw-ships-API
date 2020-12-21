@@ -4,7 +4,6 @@ const ShipsModel = require('./ships')
 const WeaponsModel = require('./weapons')
 const AffiliationsModel = require('./affiliations')
 const environment = process.env.NODE_ENV || 'development'
-// eslint-disable-next-line no-unused-vars
 const config = allConfigs[environment]
 
 const connection = new Sequelize(config.database, config.username, config.password, {

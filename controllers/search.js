@@ -21,18 +21,22 @@ const showAllIds = (req, res) => {
 }
 
 const getShipsById = async (req, res) => {
-  const { id } = req.params
+  try {
+    const { id } = req.params
 
-  const foundShip = await models.Ships.findOne({
-    where: { id },
-    include: [{ model: models.Weapons, attributes: ['name'] },
-      { model: models.Affiliations, attributes: ['name'] }
-    ],
-  })
+    const foundShip = await models.Ships.findOne({
+      where: { id },
+      include: [{ model: models.Weapons, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'] }
+      ],
+    })
 
-  return foundShip
-    ? res.send(foundShip)
-    : res.status(404).send('404, This is the not  the ship you are looking for')
+    return foundShip
+      ? res.send(foundShip)
+      : res.status(404).send('404, This is the not  the ship you are looking for')
+  } catch (error) {
+    return res.status(500).send('Unable to retrieve ship, please try again')
+  }
 }
 
 

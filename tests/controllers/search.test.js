@@ -7,13 +7,13 @@ const models = require('../../models')
 const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
-const { shipsList, singleShip, newShip } = require('../mocks/ships')
-const { getAllShips, getShipsById, saveNewShip } = require('../../controllers/search')
+const { shipsList } = require('../mocks/ships')
+const { getAllShips } = require('../../controllers/search')
 
 chai.use(sinonChai)
 const { expect } = chai
 
-describe('Controllers - teams', () => {
+describe('Controllers - ships', () => {
   let sandbox
   let stubbedFindOne
   let stubbedSend
@@ -55,18 +55,6 @@ describe('Controllers - teams', () => {
 
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSend).to.have.been.calledWith(shipsList)
-    })
-  })
-
-  describe('getShipsById', () => {
-    it('retrieves the ship associated with the provided slug from the database and calls response.send with it', async () => {
-      stubbedFindOne.returns(singleShip)
-      const request = { params: { id: 2 } }
-
-      await getShipsById(request, response)
-
-      expect(stubbedFindOne).to.have.been.calledWith({ where: { id: 2 } })
-      expect(stubbedSend).to.have.been.calledWith(singleShip)
     })
   })
 })
