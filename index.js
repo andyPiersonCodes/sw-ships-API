@@ -24,7 +24,7 @@ app.get('/ids', showAllIds)
 
 app.get('/ships/:id', getShipsById)
 
-app.post('/teams', bodyParser.json(), saveNewShip)
+app.post('/ships', bodyParser.json(), saveNewShip)
 
 app.all('*', notFound)
 
