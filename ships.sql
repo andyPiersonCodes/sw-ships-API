@@ -15,7 +15,7 @@ CREATE TABLE ships (
     id INT AUTO_INCREMENT,
     name VARCHAR(255),
     manufacturer VARCHAR(255),
-    class VARCHAR(255),
+    shipClass VARCHAR(255),
     size INT,
     isUnique ENUM ('YES', 'NO'),
     slug VARCHAR(255),
