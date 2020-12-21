@@ -1,10 +1,17 @@
 const Sequelize = require('sequelize')
-const shipsModel = require('./ships')
+const allConfigs = require('../config/sequelize')
+const ShipsModel = require('./ships')
+const WeaponsModel = require('./weapons')
+const AffiliationsModel = require('./affiliations')
+const environment = process.env.NODE_ENV || 'development'
+const config = allConfigs[environment]
 
-const connection = new Sequelize('DBNAME', 'USER', 'PW', {
-  host: 'localhost', dialect: 'mysql'
+const connection = new Sequelize(config.database, config.username, config.password, {
+  host: config.host, dialect: config.dialect
 })
 
-const ships = shipsModel(connection, Sequelize)
+const Ships = ShipsModel(connection, Sequelize)
+const Weapons = WeaponsModel(connection, Sequelize, Ships)
+const Affiliations = AffiliationsModel(connection, Sequelize, Ships)
 
-module.exports = { ships }
+module.exports = { Ships, Weapons, Affiliations }

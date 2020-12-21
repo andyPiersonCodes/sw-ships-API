@@ -51,9 +51,9 @@ SHOW TABLES;
 
 DESC ships;
 
-INSERT INTO ships (name, shipId,class, size, isUnique, slug) VALUES
-('A Wing',	'Kuat Systems Engineering'	'interceptor'	7, 'no', 'a-wing'),
-('AA-9 Coruscant Freighter'	'Botajef Shipyards'	'Freighter'	390, 'no', 'aa-9-coruscant-freighter')
+INSERT INTO ships (name, manufacturer,class, size, isUnique, slug) VALUES
+('A Wing','Kuat Systems Engineering','interceptor',7,'no','a-wing'),
+('AA-9 Coruscant Freighter','Botajef Shipyards','Freighter',390, 'no','aa-9-coruscant-freighter')
 
 INSERT INTO weapons (name, shipId) VALUES
  ('laser cannons',1),
