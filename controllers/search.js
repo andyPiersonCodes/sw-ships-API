@@ -40,10 +40,28 @@ const notFound = (req, res) => {
   return res.sendStatus(400)
 }
 
+const saveNewShip = async (req, res) => {
+  const {
+    name, shipClass, size, manufacturer, isUnique, slug
+  } = req.body
+
+  if (!name || !shipClass || !size || !manufacturer || !isUnique || !slug) {
+    return res.status(400).send('Error need all fields')
+  }
+
+
+  const newShip = await models.Ships.create({
+    name, shipClass, size, manufacturer, isUnique, slug
+  })
+
+  return res.status(201).send(newShip)
+}
+
 module.exports = {
   getIndex,
   getAllShips,
   showAllIds,
   getShipsById,
+  saveNewShip,
   notFound
 }
