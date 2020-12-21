@@ -68,7 +68,7 @@ INSERT INTO ships (name, manufacturer,class, size, isUnique, slug) VALUES
 ('Bespin Twin Pod Cloud Car','Bespin Motors','Patrol Ship',7,'no','bespin-twin-pod-cloud car');
 ('Carrack Cruiser','Damorian Manufacturing Corporation','Cruiser - Light',350,'no','carrack-cruiser');
 ('Centerpoint Station','Killik','Station',350000,'yes','centerpoint-station');
-('Chu`unthor','Republic Fleet Systems','Cruiser - Medium',2000,'yes','chuunthor');
+('Chu`unthor','Republic Fleet Systems','Cruiser - Medium',2000,'yes','chu-unthor');
 ('Cloakshape fighter','Kuat Systems Engineering','Starfighter',15,'no','coakshape-fighter');
 ('Consular Cruiser','Correllian Engineering Corporation','Transport',115,'no','consular-cruiser');
 ('Corona Frigate','Kuat Drive Yards','Frigate',275,'No','corona-frigate');
@@ -85,38 +85,38 @@ INSERT INTO ships (name, manufacturer,class, size, isUnique, slug) VALUES
 ('Ebon Hawk','Core Galaxy Systems','Freighter',24,'yes','ebon-hawk');
 ('Eclipse Star Destoyer','Kuat Drive Yards','Dreadnaught',17500,'Yes','eclipse-star-destoyer');
 
-Enforcer One,Core Galaxy Systems,Dreadnaught,900,yes,enforcer-one,"Turbo lasers, laser cannons, tractor beams",Hutt Cartel
-Escape Pod,Correllian Engineering Corporation,Escape pod,10,no,escape-pod,none,civilian
-ETA Jedi Starfighter,Kuat Systems Engineering,Starfighter,5,no,eta-jedi-starfighter,laser cannons,"Jedi, Sith, Galactic Repbulic, Imperial"
-Executor,Kuat Drive Yards,Super Weapon,19000,yes,executor,"turbo lasers, laser cannons, ion cannons, tractor beams",Imperial
-Fang Fighter,Sorosuub,Starfighter,6,no,fang-fighter,"laser cannons, proton torpedos","Mandalorians, Rebels, pirates"
-Far*Reach IV PQR,Loronar Corporation,Survey,80,no,far-reach-iv- pqr,laser cannons,Imperial
-Firespray,Kuat Systems Engineering,Patrol Ship,21,no,firespray,"laser cannons, concussion missisles","Confederation, civilian"
-Gladiator  Destroyer,Rendili StarDrive,Destroyer,600,no,gladiator-destroyer,"Turbo lasers, laser cannons, concussion missiles","Galactic Empire, Pirates"
-Ghost,Correllian Engineering Corporation,Freighter,45,yes,ghost,laser cannons,smugglers
-Gozanti Cruiser,Correllian Engineering Corporation,Cruiser - Light,64,no,gozanti-cruiser,laser cannons,"Imperial, black sun, pirates, civilian"
+('Enforcer One','Core Galaxy Systems','Dreadnaught',900,'yes','enforcer-one');
+('Escape Pod','Correllian Engineering Corporation','Transport',10,'no','escape-pod');
+('ETA Starfighter','Kuat Systems Engineering','Starfighter',5,'no','eta-starfighter');
+('Executor','Kuat Drive Yards','Super Weapon',19000,'yes','executor');
+('Fang Fighter','Sorosuub','Starfighter',6,'no','fang-fighter')
+('Far*Reach IV PQR','Loronar Corporation','Survey',80,'no','far-reach-iv-pqr');
+('Firespray','Kuat Systems Engineering','Patrol Ship',21,'no','firespray');
+('Gladiator Destroyer','Rendili StarDrive','Destroyer',600,'no','gladiator-destroyer');
+('Ghost','Correllian Engineering Corporation','Freighter',45,'yes','ghost');
+('Gozanti Cruiser','Correllian Engineering Corporation','Cruiser - Light',64,'no','gozanti-cruiser');
 
-GR-45,Gallofree Yards,Transport,60,no,gr-45,none,"New Republic, civilian"
-GR-75,Gallofree Yards,Transport,90,no,gr-75,laser cannons,"New Republic, civilian"
-Guri's Stinger,Surronian,Assault ship,1150,yes,guris-stinger,"laser cannons, ion cannons, proton torpedoes",Black Sun
-Hammerhead Cruiser,Rendili StarDrive,Frigate,315,no,hammerhead-cruiser,"Turbo Lasers, Tractor beams",Galactic Republic 
-Home One,Mon Calmari Shipyards,Cruiser - Heavy,1400,yes,home-one,"turbo lasers, ion cannons, tractor beams, concussion missiles",New Republic
-Hornet Interceptor,Tenloss Syndicate,Scout Vessel,14,no,hornet-interceptor,laser cannons,Tennloss Syndicte
-Hosk Station,Alderaan Royal Engineering,Station,200000,yes,hosk-station,turbo lasers,civilian
-Hounds Tooth,Correllian Engineering Corporation,Freighter,47,yes,hounds-tooth,"laser cannons, ion cannons, concussion missiles",bounty Hunters
-HWK-290,Correllian Engineering Corporation,Freighter,17,no,hwk-290,"laser cannons, proton torpedos",civilian
-Hyperspace Marauder,TransGalMeg,Transport,165,yes,hyperspace-marauder,laser cannons,smugglers
+('GR-45','Gallofree Yards','Transport',60,'no','gr-45');
+('GR-75','Gallofree Yards','Transport',90,'no','gr-75');
+('Guri`s Stinger','Surronian','Assault Ship',1150,'yes','guris-stinger');
+('Hammerhead Cruiser','Rendili StarDrive','Frigate',315,'no','hammerhead-cruiser');
+('Home One','Mon Calmari Shipyards','Cruiser - Heavy',1400,'yes','home-one');
+('Hornet Interceptor','Tenloss Syndicate','Scout Vessel',14,'no','hornet-interceptor');
+('Hosk Station','Alderaan Royal Engineering','Station',200000,'yes','hosk-station');
+('Hounds Tooth','Correllian Engineering Corporation','Freighter',47,'yes','hounds-tooth');
+('HWK-290','Correllian Engineering Corporation','Freighter',17,'no','hwk-290');
+('Hyperspace Marauder','TransGalMeg','Transport',165,'yes','hyperspace-marauder');
 
-I-7 Howlrunner,Incom,Starfighter,11,no,i-7-howlrunner,laser cannons,"Imperial, New Republic,  Confedersation"
-IG-2000,Trilon,Starfighter,20,yes,ig-2000,"laser cannons, concussion missiles",Bounty Hunters
-Sith Interdictor Cruiser,Republic Sienar Systems,Destroyer,600,no,sith-interdictor-cruiser,"turbo laser, tractor beams, gravity well generators",Sith
-Interdictor Cruiser,Sienar Fleet Systems,Cruiser - Heavy,1129,no,interdictor-cruiser,"laser cannons, gravity well generators",Imperial
-Invisible Hand,Rendili StarDrive,Dreadnaught,1088,yes,invisible-hand,"turbo lasers, laser cannons, ion cannons, tractor beams, proton torpedoes",Confederation
-Ithullian Ore Hauler,Ithullian,Transport,1000,no,ithullian-ore-hauler,"Turbo lasers, laser cannons",Ithullian
-Keldabe ,Mandal Motors,Battleship,1000,No,keldabe ,"turbo lasers, laser cannons, ion cannons, tractor beams, mass. Drivers","Zann Consortium, Mandalorians"
-Lady Luck,Sorosuub,Luxury Space Yacht,50,yes,lady-luck,laser cannons,smugglers
-Lambda Shuttle,Sienar Fleet Systems,Transport,20,no,lambda-shuttle,laser cannons,Imperial
-Lancer Frigate,Kuat Drive Yards,Frigate,250,no,lancer-frigate,laser cannons,Imperial
+('I-7 Howlrunner','Incom','Starfighter',11,'no','i-7-howlrunner');
+('IG-2000','Trilon','Starfighter',20,'yes','ig-2000');
+('Sith Interdictor Cruiser','Republic Sienar Systems','Destroyer',600,'no','sith-interdictor-cruiser');
+('Interdictor Cruiser','Sienar Fleet Systems','Cruiser - Heavy',1129,'no','interdictor-cruiser');
+('Invisible Hand','Rendili StarDrive','Dreadnaught',1088,'yes','invisible-hand');
+('Ithullian Ore Hauler','Ithullian','Transport',1000,'no','ithullian-ore-hauler');
+('Keldabe','Mandal Motors','Battleship',1000,'No','keldabe');
+('Lady Luck','Sorosuub','Luxury Space Yacht',50,'yes','lady-luck');
+('Lambda Shuttle','Sienar Fleet Systems','Transport',20,'no','lambda-shuttle');
+('Lancer Frigate','Kuat Drive Yards','Frigate',250,'no','lancer-frigate');
 
 Lucrehulk Battleship,Hoersch-Kessel,Battleship,3170,no,lucrehulk-battleship,"Turbo lasers, laser cannons",Confederation
 M22 T Krayt,Mandal Motors,Gunship,50,no,m22-t-krayt,"laser cannons, ion cannons, concussion missiles","Naboo, smugglers, Hutt Cartel"
@@ -267,12 +267,12 @@ INSERT INTO weapons (name, shipId) VALUES
  ('laser cannons'21);
  ('laser cannons', 22);
  ('Super laser',23);
- ('turbo lasers,23);
+ ('turbo lasers',23);
  ('laser cannons',23);
  ('concussion missiles',23);
  ('tractor beams',23);
  ('super laser',24);
- ('turbo lasers,24);
+ ('turbo lasers',24);
  ('laser cannons',24);
  ('concussion missiles',24);
  ('tractor beams',24);
@@ -290,9 +290,67 @@ INSERT INTO weapons (name, shipId) VALUES
  ('turbo lasers',30);
  ('laser cannons',30);
  ('ion cannons',30);
-
- 
- 
+ ('turbo lasers',31);
+ ('laser cannons',31);
+ ('tractor beams',31);
+ ('none',32);
+ ('laser cannons',33);
+ ('turbo lasers',34);
+ ('laser cannons',34);
+ ('ion cannons',34);
+ ('tractor beams',34);
+ ('laser cannons',35);
+ ('proton torpedos',35);
+ ('laser cannons',36);
+ ('laser cannons',37);
+ ('concussion missisles',37);
+ ('turbo lasers',38);
+ ('laser cannons',38);
+ ('concussion missiles',38);
+ ('laser cannons',39);
+ ('laser cannons',40);
+ ('none',41);
+ ('none',42);
+ ('laser cannons',43);
+ ('ion cannons',43);
+ ('proton torpedoes',43);
+ ('turbo lasers',44);
+ ('tractor beams',44);
+ ('turbo lasers',45);
+ ('ion cannons',45);
+ ('tractor beams',45);
+ ('concussion missiles',45);
+ ('laser cannons',46);
+('turbo lasers',47);
+('laser cannons',48);
+('ion cannons',48);
+('concussion missiles'48);
+('laser cannons',49);
+('proton torpedos',49);
+('laser cannons',50);
+('laser cannons',51);
+('laser cannons',52);
+('concussion missiles',52);
+('turbo laser',53);
+('tractor beams',53);
+('gravity well generators',53);
+('laser cannons',54);
+('gravity well generators',54);
+('turbo lasers',55);
+('laser cannons',55);
+('ion cannons',55);
+('tractor beams',55);
+('proton torpedoes',55);
+('turbo lasers',56);
+('laser cannons',56);
+('turbo lasers',57);
+('laser cannons',57);
+('ion cannons',57);
+('tractor beams',57);
+('mass drivers',57);
+('laser cannons',58);
+('laser cannons',59);
+('laser cannons',60);
  
  
 
@@ -353,6 +411,53 @@ INSERT INTO affiliations (name, shipId) VALUES
  ('New Republic',28);
  ('smugglers',29);
  ('Imperial',30);
+ ('Hutt Cartel',31);
+ ('civilian)',32);
+ ('Jedi',33);
+ ('Sith',33);
+ ('Galactic Repbulic',33);
+ ('Imperial',33);
+ ('Imperial',34);
+ ('Mandalorians',35);
+ ('Rebels',35);
+ ('pirates',35);
+ ('Imperial',36);
+ ('Confederation',37);
+ ('civilian',37);
+ ('Galactic Empire',38);
+ ('pirates',38);
+ ('smugglers',39);
+ ('Imperial',40);
+ ('Black Sun',40);
+ ('pirates',40);
+ ('civilian',40);
+ ('New Republic',41);
+ ('civilian',41);
+ ('civilian',42);
+ ('Black Sun',43);
+ ('Galactic Republic',44);
+ ('New Republic',45);
+ ('Tennloss Syndicte',46);
+ ('civilian',47);
+ ('bounty Hunters',48);
+ ('civilian',49);
+ ('smugglers',50);
+ ('Imperial',51);
+('New Republic',51);
+('Confederation',51);
+('bounty hunters',52);
+('Sith',53);
+('Imperial',54);
+('Confederation',55);
+('Ithullian',56);
+('Zann Consortium',57);
+('Mandalorians',57);
+('smugglers',58);
+('Imperial',59);
+('Imperial',59);
+
+
+
 
 SELECT * from ships;
 SELECT * from affiliations;
