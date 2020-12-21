@@ -14,9 +14,9 @@ DROP TABLE ships;
 CREATE TABLE ships (
     id INT AUTO_INCREMENT,
     name VARCHAR(255),
+    manufacturer VARCHAR(255),
     class VARCHAR(255),
     size INT,
-    manufacturer VARCHAR(255),
     isUnique ENUM ('YES', 'NO'),
     slug VARCHAR(255),
  	createdAt DATETIME DEFAULT NOW(),
@@ -51,15 +51,19 @@ SHOW TABLES;
 
 DESC ships;
 
-INSERT INTO ships (name, class, size, manufacturer, isUnique,slug) VALUES
- ('Captain Hook','Peter Pan','captain-hook'),
+INSERT INTO ships (name, shipId,class, size, isUnique, slug) VALUES
+('A Wing',	'Kuat Systems Engineering'	'interceptor'	7, 'no', 'a-wing'),
+('AA-9 Coruscant Freighter'	'Botajef Shipyards'	'Freighter'	390, 'no', 'aa-9-coruscant-freighter')
 
+INSERT INTO weapons (name, shipId) VALUES
+ ('laser cannons',1),
+ ('concussion missiles',1),
+ ('None', 2),
 
-INSERT INTO weapons (name, class, size, manufacturer, isUnique,slug) VALUES
- ('Captain Hook','Peter Pan','captain-hook'),
-
-INSERT INTO affiliations (name, class, size, manufacturer, isUnique,slug) VALUES
- ('Captain Hook','Peter Pan','captain-hook'),
+INSERT INTO affiliations (name, shipId) VALUES
+ ('Rebels', 1),
+ ('New Republic', 1),
+ ('Imperial', 2),
 SELECT * from ships;
 
 
