@@ -33,7 +33,7 @@ const getShipsById = async (req, res) => {
 
     return foundShip
       ? res.send(foundShip)
-      : res.status(404).send('404, This is the not  the ship you are looking for')
+      : res.sendStatus(404)
   } catch (error) {
     return res.status(500).send('Unable to retrieve ship, please try again')
   }

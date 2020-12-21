@@ -7,8 +7,8 @@ const models = require('../../models')
 const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
-const { shipsList } = require('../mocks/ships')
-const { getAllShips } = require('../../controllers/search')
+const { shipsList, singleShip } = require('../mocks/ships')
+const { getAllShips, getShipsById } = require('../../controllers/search')
 
 chai.use(sinonChai)
 const { expect } = chai
@@ -55,6 +55,54 @@ describe('Controllers - ships', () => {
 
       expect(stubbedFindAll).to.have.callCount(1)
       expect(stubbedSend).to.have.been.calledWith(shipsList)
+    })
+  })
+
+  describe('getShipsById', () => {
+    it('retrieves the ship associated with the provided ID from the database and calls response.send with it', async () => {
+      stubbedFindOne.returns(singleShip)
+      const request = { params: { id: 2 } }
+
+      await getShipsById(request, response)
+
+      expect(stubbedFindOne).to.have.been.calledWith({
+        where: { id: 2 },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSend).to.have.been.calledWith(singleShip)
+    })
+
+    it('returns a 404 when no ship is found', async () => {
+      stubbedFindOne.returns(null)
+      const request = { params: { id: 'not-found' }, }
+
+      await getShipsById(request, response)
+
+      expect(stubbedFindOne).to.have.been.calledWith({
+        where: { id: 'not-found' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSendStatus).to.have.been.calledWith(404)
+    })
+
+    it('returns a 500 with an error message when the database call throws an error', async () => {
+      stubbedFindOne.throws('ERROR!')
+      const request = { params: { id: 'throw-error' } }
+
+      await getShipsById(request, response)
+
+      expect(stubbedFindOne).to.have.been.calledWith({
+        where: { id: 'throw-error' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedStatus).to.have.been.calledWith(500)
+      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
     })
   })
 })
