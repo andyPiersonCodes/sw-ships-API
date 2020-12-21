@@ -7,8 +7,8 @@ const environment = process.env.NODE_ENV || 'development'
 // eslint-disable-next-line no-unused-vars
 const config = allConfigs[environment]
 
-const connection = new Sequelize('starWars', 'sithLord', 'GLucas514!', {
-  host: 'localhost', dialect: 'mysql'
+const connection = new Sequelize(config.database, config.username, config.password, {
+  host: config.host, dialect: config.dialect,
 })
 
 const Ships = ShipsModel(connection, Sequelize)
