@@ -35,4 +35,14 @@ const newShip = {
   slug: 'q-wing'
 }
 
-module.exports = { shipsList, singleShip, newShip }
+const deleteThisShip = {
+  id: 150,
+  name: 'Q Wing',
+  shipClass: 'corvette',
+  size: 70,
+  manufacturer: 'Cygnus Spaceworks',
+  isUnique: 'NO',
+  slug: 'q-wing'
+}
+
+module.exports = { shipsList, singleShip, newShip, deleteThisShip }

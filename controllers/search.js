@@ -35,11 +35,6 @@ const getShipsById = async (req, res) => {
   }
 }
 
-
-const notFound = (req, res) => {
-  return res.sendStatus(400)
-}
-
 const saveNewShip = async (req, res) => {
   const {
     name, shipClass, size, manufacturer, isUnique, slug
@@ -57,10 +52,26 @@ const saveNewShip = async (req, res) => {
   return res.status(201).send(newShip)
 }
 
+const deleteShip = async (req, res) => {
+  try {
+    const { id } = req.params
+
+    const ship = await models.Ships.findOne({ where: { id } })
+
+    if (!ship) return res.status(404).send(`No matching ship with id: ${id}`)
+    await models.Ships.destroy({ where: { id } })
+
+    return res.send(`Successfully deleted the ship: ${id}.`)
+  } catch (error) {
+    return res.status(500).send('Unknown error while deleting ship, please try again')
+  }
+}
+
+
 module.exports = {
   getIndex,
   getAllShips,
   getShipsById,
   saveNewShip,
-  notFound
+  deleteShip
 }

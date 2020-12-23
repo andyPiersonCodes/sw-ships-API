@@ -8,7 +8,7 @@ const {
   getAllShips,
   getShipsById,
   saveNewShip,
-  notFound
+  deleteShip
 } = require('./controllers/search')
 const app = express()
 
@@ -23,7 +23,7 @@ app.get('/ships/:id', getShipsById)
 
 app.post('/ships', bodyParser.json(), saveNewShip)
 
-app.all('*', notFound)
+app.delete('/ship/:id', deleteShip)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)

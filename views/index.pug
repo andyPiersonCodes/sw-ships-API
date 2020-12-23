@@ -31,24 +31,29 @@ html
 
         table
             tr
-                th Reference
                 th Method
+                th Reference
                 th Purpose
             
             tr
+                td.methods GET
                 td /ships
-                td GET
                 td Return JSON of all ships
             
             tr
+                td.methods GET
                 td /ships/#
-                td GET
                 td Return JSON of ship by id
           
             tr
+                td.methods POST
                 td /ships/
-                td POST
                 td Create new ship and add to database
+
+            tr
+                td.methods DELETE
+                td /ships/#
+                td Delete a ships record
 
 
         <h3 id='shipIds', class= 'titles'> Ship IDs </h3>

@@ -7,8 +7,8 @@ const models = require('../../models')
 const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
-const { shipsList, singleShip, newShip } = require('../mocks/ships')
-const { getAllShips, getShipsById, saveNewShip } = require('../../controllers/search')
+const { shipsList, singleShip, newShip, deleteThisShip } = require('../mocks/ships')
+const { getAllShips, getShipsById, saveNewShip, deleteShip } = require('../../controllers/search')
 
 chai.use(sinonChai)
 const { expect } = chai
@@ -21,12 +21,13 @@ describe('Controllers - ships', () => {
   let stubbedSendStatus
   let stubbedStatusSend
   let stubbedStatus
+  let stubbedDestroy
 
   before(() => {
     sandbox = sinon.createSandbox()
 
     stubbedFindOne = sandbox.stub(models.Ships, 'findOne')
-
+    stubbedDestroy = sandbox.stub(models.Ships, 'destroy')
     stubbedSend = sandbox.stub()
     stubbedSendStatus = sandbox.stub()
     stubbedStatusSend = sandbox.stub()
@@ -118,6 +119,40 @@ describe('Controllers - ships', () => {
       expect(stubbedCreate).to.have.been.calledWith(newShip)
       expect(stubbedStatus).to.have.been.calledWith(201)
       expect(stubbedStatusSend).to.have.been.calledWith(newShip)
+    })
+  })
+
+  describe('deleteShip', () => {
+    it('deletes a ship from the database.', async () => {
+      stubbedFindOne.returns(deleteThisShip)
+      const request = { params: { id: 150 } }
+
+      await deleteShip(request, response)
+
+      expect(stubbedDestroy).to.have.calledWith({ where: { id: request.params.id } })
+      expect(stubbedSend).to.have.been.calledWith(`Successfully deleted the ship: ${request.params.id}.`)
+    })
+
+    it('returns a 404 status and a message when no ship is found matching the id provided by the user.', async () => {
+      stubbedFindOne.returns(null)
+
+      const request = { params: { id: 1000 } }
+
+      await deleteShip(request, response)
+
+      expect(stubbedDestroy).to.have.callCount(0)
+      expect(stubbedStatus).to.have.been.calledWith(404)
+      expect(stubbedStatusSend).to.have.been.calledWith(`No matching ship with id: ${request.params.id}`)
+    })
+
+    it('returns a 500 status with a message when the database call throws an error.', async () => {
+      stubbedFindOne.throws('error')
+
+      await deleteShip({}, response)
+
+      expect(stubbedDestroy).to.have.callCount(0)
+      expect(stubbedStatus).to.have.been.calledWith(500)
+      expect(stubbedStatusSend).to.have.been.calledWith('Unknown error while deleting ship, please try again')
     })
   })
 })

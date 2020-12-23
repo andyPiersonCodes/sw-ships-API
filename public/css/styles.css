@@ -22,6 +22,11 @@ img{
     padding-top: 6em;
 }
 
+.methods{
+    color: darkorange;
+    font-weight: bolder;
+}
+
 .titles{
     font-size: 2vw;
     text-align: center;
