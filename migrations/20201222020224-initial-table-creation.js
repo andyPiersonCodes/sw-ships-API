@@ -13,6 +13,7 @@ module.exports = {
       size: { type: Sequelize.INTEGER, allowNull: false },
       manufacturer: { type: Sequelize.STRING, allowNull: false },
       isUnique: { type: Sequelize.STRING, allowNull: false },
+      slug: { type: Sequelize.STRING, allowNull: false },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
       updatedAt: {
         type: Sequelize.DATE,

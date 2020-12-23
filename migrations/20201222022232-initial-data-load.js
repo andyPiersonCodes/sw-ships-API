@@ -447,6 +447,15 @@ module.exports = {
       },
       {
         name: 'Zeta Class Shuttle', manufacturer: 'Sienar Fleet Systems', shipClass: 'Freighter', size: 31, isUnique: 'no', slug: 'zeta-class-shuttle'
+      },
+      {
+        name: 'Nebulon B', manufacturer: 'Sienar Fleet Systems', shipClass: 'Frigate', size: 300, isUnique: 'no', slug: 'nebulon-b'
+      },
+      {
+        name: 'Imperial Star Destroyer', manufacturer: 'Kuat Drive Yards', shipClass: 'Destroyer', size: 1600, isUnique: 'no', slug: 'imperial-star-destroyer'
+      },
+      {
+        name: 'Devastator', manufacturer: 'Kuat Drive Yards', shipClass: 'Destroyer', size: 1600, isUnique: 'yes', slug: 'devastator'
       }
     ])
 
@@ -748,10 +757,22 @@ module.exports = {
       { name: 'laser cannons', shipId: 145 },
       { name: 'ion cannons', shipId: 145 },
       { name: 'concussion missiles', shipId: 145 },
-      { name: 'laser cannons', shipId: 146 }
+      { name: 'laser cannons', shipId: 146 },
+      { name: 'turbo lasers', shipId: 147 },
+      { name: 'laser cannons', shipId: 147 },
+      { name: 'tractor beams', shipId: 147 },
+      { name: 'concussion missiles', shipId: 147 },
+      { name: 'turbo lasers', shipId: 148 },
+      { name: 'laser cannons', shipId: 148 },
+      { name: 'tractor beams', shipId: 148 },
+      { name: 'concussion missiles', shipId: 148 },
+      { name: 'turbo lasers', shipId: 149 },
+      { name: 'laser cannons', shipId: 149 },
+      { name: 'tractor beams', shipId: 149 },
+      { name: 'concussion missiles', shipId: 149 }
     ])
 
-    return queryInterface.bulkInsert('affilations', [
+    return queryInterface.bulkInsert('affiliations', [
       { name: 'Rebels', shipId: 1 },
       { name: 'New Republic', shipId: 1 },
       { name: 'Imperial', shipId: 2 },
@@ -966,7 +987,17 @@ module.exports = {
       { name: 'civilian', shipId: 144 },
       { name: 'Rebels', shipId: 145 },
       { name: 'pirates', shipId: 145 },
-      { name: 'Imperial', shipId: 146 }
+      { name: 'Imperial', shipId: 146 },
+      { name: 'Imperial', shipId: 147 },
+      { name: 'Rebels', shipId: 147 },
+      { name: 'New Republic', shipId: 147 },
+      { name: 'pirates', shipId: 147 },
+      { name: 'civilian', shipId: 147 },
+      { name: 'Imperial', shipId: 148 },
+      { name: 'Imperial Remnant', shipId: 148 },
+      { name: 'First Order', shipId: 148 },
+      { name: 'New Republic', shipId: 148 },
+      { name: 'Imperial', shipId: 149 },
     ])
   },
 

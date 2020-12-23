@@ -66,6 +66,7 @@ describe('Controllers - ships', () => {
       await getShipsById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
+        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
         where: { id: 2 },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -81,6 +82,7 @@ describe('Controllers - ships', () => {
       await getShipsById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
+        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
         where: { id: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -96,6 +98,7 @@ describe('Controllers - ships', () => {
       await getShipsById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
+        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
         where: { id: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }

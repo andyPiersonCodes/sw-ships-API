@@ -1,13 +1,12 @@
-/* eslint-disable no-console */
-const ships = require('../ships')
 const models = require('../models')
 
 const getIndex = (req, res) => {
-  return res.render('index', { ships })
+  return res.render('index', { model: models.Ships.findAll })
 }
 
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
+    attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
     include: [{ model: models.Weapons, attributes: ['name'] },
       { model: models.Affiliations, attributes: ['name'] }
     ],
@@ -16,15 +15,12 @@ const getAllShips = async (req, res) => {
   return res.send(ships)
 }
 
-const showAllIds = (req, res) => {
-  return res.render('ids')
-}
-
 const getShipsById = async (req, res) => {
   try {
     const { id } = req.params
 
     const foundShip = await models.Ships.findOne({
+      attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
       where: { id },
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] }
@@ -64,7 +60,6 @@ const saveNewShip = async (req, res) => {
 module.exports = {
   getIndex,
   getAllShips,
-  showAllIds,
   getShipsById,
   saveNewShip,
   notFound
