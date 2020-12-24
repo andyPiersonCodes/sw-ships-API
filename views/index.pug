@@ -42,8 +42,13 @@ html
             
             tr
                 td.methods GET
-                td /ships/#
-                td Return JSON of ship by id
+                td /ships/id/#
+                td Return JSON of a ship by id
+
+            tr 
+                td.methods GET
+                td /ship/slug
+                td Returns a JSON of a fuzzy search of all matching slugs
           
             tr
                 td.methods POST
