@@ -6,11 +6,11 @@ const port = 1338
 const {
   getIndex,
   getAllShips,
-  getShipsById,
   saveNewShip,
   deleteShip,
-  getShipsBySlug
+  getShipsByIdOrSlug
 } = require('./controllers/search')
+
 const app = express()
 
 app.set('view engine', 'pug')
@@ -20,13 +20,12 @@ app.get('/', getIndex)
 
 app.get('/ships', getAllShips)
 
-app.get('/ships/:id', getShipsById)
 
-app.get('/ships/:slug', getShipsBySlug)
+app.get('/ships/:identifier', getShipsByIdOrSlug)
 
 app.post('/ships', bodyParser.json(), saveNewShip)
 
-app.delete('/ship/:id', deleteShip)
+app.delete('/ships/:id', deleteShip)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
