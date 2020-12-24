@@ -20,4 +20,4 @@ Ships.hasMany(Weapons)
 Affiliations.belongsTo(Ships)
 Ships.hasMany(Affiliations)
 
-module.exports = { Ships, Weapons, Affiliations }
+module.exports = { Ships, Weapons, Affiliations, Op: Sequelize.Op }

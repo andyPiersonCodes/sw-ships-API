@@ -8,7 +8,8 @@ const {
   getAllShips,
   getShipsById,
   saveNewShip,
-  deleteShip
+  deleteShip,
+  getShipsBySlug
 } = require('./controllers/search')
 const app = express()
 
@@ -20,6 +21,8 @@ app.get('/', getIndex)
 app.get('/ships', getAllShips)
 
 app.get('/ships/:id', getShipsById)
+
+app.get('/ships/:slug', getShipsBySlug)
 
 app.post('/ships', bodyParser.json(), saveNewShip)
 
