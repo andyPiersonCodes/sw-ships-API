@@ -116,7 +116,7 @@ describe('Controllers - ships', () => {
   })
 
   describe('getShipsBySlug', () => {
-    it('retrieves the ship associated with the provided slug from the database and calls response.send with it', async () => {
+    it('retrieves the ship associated with the provided slug from the database', async () => {
       stubbedFindAll.returns(singleShip)
       const request = { params: { slug: 'aa-9-coruscant-freighter' } }
 
