@@ -210,6 +210,53 @@ describe('Controllers - ships', () => {
     })
   })
 
+  describe('getShipByLTESize', () => {
+    it('retrieves a list of ships greater than or equal to the size provided', async () => {
+      stubbedFindAll.returns(singleShip)
+      const request = { params: { size: 100 } }
+
+      await getShipsByLTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 100 },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSend).to.have.been.calledWith(smallShip)
+    })
+    it('returns a 404 when no ship is found', async () => {
+      stubbedFindAll.returns(null)
+      const request = { params: { size: 'not-found' }, }
+
+      await getShipsByLTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 'not-found' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSendStatus).to.have.been.calledWith(404)
+    })
+
+    it('returns a 500 with an error message when the database call throws an error', async () => {
+      stubbedFindAll.throws('ERROR!')
+      const request = { params: { size: 'throw-error' } }
+
+      await getShipsByLTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 'throw-error' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedStatus).to.have.been.calledWith(500)
+      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
+    })
+  })
+
   describe('saveNewShip', () => {
     it('accepts new ship details and saves them as a new ship, returning the saved record with a 201 status', async () => {
       const request = { body: newShip }
