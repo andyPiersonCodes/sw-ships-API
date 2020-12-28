@@ -72,12 +72,12 @@ describe('Controllers - ships', () => {
       const request = { params: { id: 2 } }
 
       await getShipById(request, response)
-
+      console.log(singleShip)
       expect(stubbedFindOne).to.have.been.calledWith({
         where: { id: 2 },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSend).to.have.been.calledWith(singleShip)
     })
@@ -92,7 +92,7 @@ describe('Controllers - ships', () => {
         where: { id: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSendStatus).to.have.been.calledWith(404)
     })
@@ -108,7 +108,7 @@ describe('Controllers - ships', () => {
         where: { id: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedStatus).to.have.been.calledWith(500)
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
@@ -126,7 +126,7 @@ describe('Controllers - ships', () => {
         where: { slug: 'aa-9-coruscant-freighter' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSend).to.have.been.calledWith(singleShip)
     })
@@ -141,7 +141,7 @@ describe('Controllers - ships', () => {
         where: { slug: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSendStatus).to.have.been.calledWith(404)
     })
@@ -156,7 +156,7 @@ describe('Controllers - ships', () => {
         where: { slug: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedStatus).to.have.been.calledWith(500)
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
@@ -174,7 +174,7 @@ describe('Controllers - ships', () => {
         where: { size: 100 },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSend).to.have.been.calledWith(singleShip)
     })
@@ -188,7 +188,7 @@ describe('Controllers - ships', () => {
         where: { size: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSendStatus).to.have.been.calledWith(404)
     })
@@ -203,7 +203,7 @@ describe('Controllers - ships', () => {
         where: { size: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedStatus).to.have.been.calledWith(500)
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
@@ -212,16 +212,18 @@ describe('Controllers - ships', () => {
 
   describe('getShipByLTESize', () => {
     it('retrieves a list of ships greater than or equal to the size provided', async () => {
-      stubbedFindAll.returns(singleShip)
+      stubbedFindAll.returns(smallShip)
       const request = { params: { size: 100 } }
 
       await getShipsByLTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 100 },
+        where: {
+          size: { [models.Op.lte]: 100 },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSend).to.have.been.calledWith(smallShip)
     })
@@ -232,10 +234,12 @@ describe('Controllers - ships', () => {
       await getShipsByLTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 'not-found' },
+        where: {
+          size: { [models.Op.lte]: 'not-found' },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedSendStatus).to.have.been.calledWith(404)
     })
@@ -247,10 +251,12 @@ describe('Controllers - ships', () => {
       await getShipsByLTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 'throw-error' },
+        where: {
+          size: { [models.Op.lte]: 'throw-error' },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
-        ],
+        ]
       })
       expect(stubbedStatus).to.have.been.calledWith(500)
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
