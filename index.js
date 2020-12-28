@@ -6,10 +6,12 @@ const port = 1338
 const {
   getIndex,
   getAllShips,
-  getShipsById,
+  getShipById,
   saveNewShip,
   deleteShip,
-  getShipsBySlug
+  getShipsBySlug,
+  getShipsByGTESize,
+  getShipsByLTESize
 } = require('./controllers/search')
 
 const app = express()
@@ -21,9 +23,13 @@ app.get('/', getIndex)
 
 app.get('/ships', getAllShips)
 
-app.get('/ships/id/:id', getShipsById)
+app.get('/ships/id/:id', getShipById)
 
 app.get('/ships/:slug', getShipsBySlug)
+
+app.get('/ships/gte/:size', getShipsByGTESize)
+
+app.get('/ships/lte/:size', getShipsByLTESize)
 
 app.post('/ships', bodyParser.json(), saveNewShip)
 

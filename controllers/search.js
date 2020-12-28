@@ -6,7 +6,6 @@ const getIndex = (req, res) => {
 
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
-    attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
     include: [{ model: models.Weapons, attributes: ['name'] },
       { model: models.Affiliations, attributes: ['name'] }
     ],
@@ -16,12 +15,11 @@ const getAllShips = async (req, res) => {
 }
 
 
-const getShipsById = async (req, res) => {
+const getShipById = async (req, res) => {
   try {
     const { id } = req.params
 
     const foundShip = await models.Ships.findOne({
-      attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
       where: { id },
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] }
@@ -36,20 +34,59 @@ const getShipsById = async (req, res) => {
   }
 }
 
-
-
 const getShipsBySlug = async (req, res) => {
   try {
     const { slug } = req.params
 
     const foundShip = await models.Ships.findAll({
-      attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
       where: {
         slug: { [models.Op.like]: `%${slug}%` },
       },
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] }
-      ]
+      ],
+    })
+
+    return foundShip
+      ? res.send(foundShip)
+      : res.sendStatus(404)
+  } catch (error) {
+    return res.status(500).send('Unable to retrieve ship, please try again')
+  }
+}
+
+const getShipsByGTESize = async (req, res) => {
+  try {
+    const { size } = req.params
+
+    const foundShip = await models.Ships.findAll({
+      where: {
+        size: { [models.Op.gte]: size },
+      },
+      include: [{ model: models.Weapons, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'] }
+      ],
+    })
+
+    return foundShip
+      ? res.send(foundShip)
+      : res.sendStatus(404)
+  } catch (error) {
+    return res.status(500).send('Unable to retrieve ship, please try again')
+  }
+}
+
+const getShipsByLTESize = async (req, res) => {
+  try {
+    const { size } = req.params
+
+    const foundShip = await models.Ships.findAll({
+      where: {
+        size: { [models.Op.lte]: size },
+      },
+      include: [{ model: models.Weapons, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'] }
+      ],
     })
 
     return foundShip
@@ -97,8 +134,10 @@ const deleteShip = async (req, res) => {
 module.exports = {
   getIndex,
   getAllShips,
-  getShipsById,
+  getShipById,
   getShipsBySlug,
+  getShipsByGTESize,
+  getShipsByLTESize,
   saveNewShip,
   deleteShip
 }

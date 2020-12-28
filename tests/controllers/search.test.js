@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 const chai = require('chai')
@@ -8,7 +9,9 @@ const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
 const { shipsList, singleShip, newShip, deleteThisShip } = require('../mocks/ships')
-const { getAllShips, getShipsById, saveNewShip, deleteShip } = require('../../controllers/search')
+const {
+  getAllShips, getShipById, getShipsBySlug, saveNewShip, deleteShip
+} = require('../../controllers/search')
 
 chai.use(sinonChai)
 const { expect } = chai
@@ -16,6 +19,7 @@ const { expect } = chai
 describe('Controllers - ships', () => {
   let sandbox
   let stubbedFindOne
+  let stubbedFindAll
   let stubbedSend
   let response
   let stubbedSendStatus
@@ -27,6 +31,7 @@ describe('Controllers - ships', () => {
     sandbox = sinon.createSandbox()
 
     stubbedFindOne = sandbox.stub(models.Ships, 'findOne')
+    stubbedFindAll = sandbox.stub(models.Ships, 'findAll')
     stubbedDestroy = sandbox.stub(models.Ships, 'destroy')
     stubbedSend = sandbox.stub()
     stubbedSendStatus = sandbox.stub()
@@ -50,7 +55,7 @@ describe('Controllers - ships', () => {
 
   describe('getAllShips', () => {
     it('retrieves a list of ships from the database and calls response.send() with the list', async () => {
-      const stubbedFindAll = sinon.stub(models.Ships, 'findAll').returns(shipsList)
+      stubbedFindAll.returns(shipsList)
 
       await getAllShips({}, response)
 
@@ -59,15 +64,14 @@ describe('Controllers - ships', () => {
     })
   })
 
-  describe('getShipsById', () => {
+  describe('getShipById', () => {
     it('retrieves the ship associated with the provided ID from the database and calls response.send with it', async () => {
       stubbedFindOne.returns(singleShip)
       const request = { params: { id: 2 } }
 
-      await getShipsById(request, response)
+      await getShipById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
-        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
         where: { id: 2 },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -80,10 +84,9 @@ describe('Controllers - ships', () => {
       stubbedFindOne.returns(null)
       const request = { params: { id: 'not-found' }, }
 
-      await getShipsById(request, response)
+      await getShipById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
-        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
         where: { id: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -96,10 +99,10 @@ describe('Controllers - ships', () => {
       stubbedFindOne.throws('ERROR!')
       const request = { params: { id: 'throw-error' } }
 
-      await getShipsById(request, response)
+      await getShipById(request, response)
 
       expect(stubbedFindOne).to.have.been.calledWith({
-        attributes: ['id', 'name', 'manufacturer', 'shipClass', 'size', 'isUnique', 'slug'],
+
         where: { id: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -109,6 +112,61 @@ describe('Controllers - ships', () => {
       expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
     })
   })
+
+  describe('getShipsBySlug', () => {
+    it('retrieves the ship associated with the provided slug from the database and calls response.send with it', async () => {
+      stubbedFindAll.returns(singleShip)
+      const request = { params: { slug: 'aa-9-coruscant-freighter' } }
+
+      await getShipsBySlug(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: {
+          slug: { [models.Op.like]: 'aa-9-coruscant-freighter' },
+        },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSend).to.have.been.calledWith(singleShip)
+    })
+
+    it('returns a 404 when no ship is found', async () => {
+      stubbedFindAll.returns(null)
+      const request = { params: { slug: 'not-found' }, }
+
+      await getShipsBySlug(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: {
+          slug: { [models.Op.like]: 'not-found' },
+        },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSendStatus).to.have.been.calledWith(404)
+    })
+
+    it('returns a 500 with an error message when the database call throws an error', async () => {
+      stubbedFindAll.throws('ERROR!')
+      const request = { params: { slug: 'throw-error' } }
+
+      await getShipsBySlug(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: {
+          slug: { [models.Op.like]: 'throw-error' },
+        },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedStatus).to.have.been.calledWith(500)
+      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
+    })
+  })
+
   describe('saveNewShip', () => {
     it('accepts new ship details and saves them as a new ship, returning the saved record with a 201 status', async () => {
       const request = { body: newShip }
