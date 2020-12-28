@@ -26,6 +26,16 @@ const singleShip = {
   slug: 'aa-9-coruscant-freighter'
 }
 
+const smallShip = {
+  id: 1,
+  name: 'A Wing',
+  shipClass: 'interceptor',
+  size: 7,
+  manufacturer: 'Kuat Drive Yards',
+  isUnique: 'NO',
+  slug: 'a-wing'
+}
+
 const newShip = {
   name: 'Q Wing',
   shipClass: 'corvette',
@@ -45,4 +55,6 @@ const deleteThisShip = {
   slug: 'q-wing'
 }
 
-module.exports = { shipsList, singleShip, newShip, deleteThisShip }
+module.exports = {
+  shipsList, singleShip, newShip, smallShip, deleteThisShip
+}

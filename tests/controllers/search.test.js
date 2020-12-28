@@ -8,9 +8,11 @@ const models = require('../../models')
 const {
   afterEach, before, beforeEach, describe, it
 } = require('mocha')
-const { shipsList, singleShip, newShip, deleteThisShip } = require('../mocks/ships')
 const {
-  getAllShips, getShipById, getShipsBySlug, saveNewShip, deleteShip
+  shipsList, singleShip, newShip, smallShip, deleteThisShip
+} = require('../mocks/ships')
+const {
+  getAllShips, getShipById, getShipsBySlug, getShipsByGTESize, getShipsByLTESize, saveNewShip, deleteShip
 } = require('../../controllers/search')
 
 chai.use(sinonChai)
@@ -121,9 +123,7 @@ describe('Controllers - ships', () => {
       await getShipsBySlug(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: {
-          slug: { [models.Op.like]: 'aa-9-coruscant-freighter' },
-        },
+        where: { slug: 'aa-9-coruscant-freighter' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ],
@@ -138,9 +138,7 @@ describe('Controllers - ships', () => {
       await getShipsBySlug(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: {
-          slug: { [models.Op.like]: 'not-found' },
-        },
+        where: { slug: 'not-found' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ],
@@ -155,9 +153,54 @@ describe('Controllers - ships', () => {
       await getShipsBySlug(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: {
-          slug: { [models.Op.like]: 'throw-error' },
-        },
+        where: { slug: 'throw-error' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedStatus).to.have.been.calledWith(500)
+      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve ship, please try again')
+    })
+  })
+
+  describe('getShipByGTESize', () => {
+    it('retrieves a list of ships greater than or equal to the size provided', async () => {
+      stubbedFindAll.returns(singleShip)
+      const request = { params: { size: 100 } }
+
+      await getShipsByGTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 100 },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSend).to.have.been.calledWith(singleShip)
+    })
+    it('returns a 404 when no ship is found', async () => {
+      stubbedFindAll.returns(null)
+      const request = { params: { size: 'not-found' }, }
+
+      await getShipsByGTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 'not-found' },
+        include: [{ model: models.Weapons, attributes: ['name'] },
+          { model: models.Affiliations, attributes: ['name'] }
+        ],
+      })
+      expect(stubbedSendStatus).to.have.been.calledWith(404)
+    })
+
+    it('returns a 500 with an error message when the database call throws an error', async () => {
+      stubbedFindAll.throws('ERROR!')
+      const request = { params: { size: 'throw-error' } }
+
+      await getShipsByGTESize(request, response)
+
+      expect(stubbedFindAll).to.have.been.calledWith({
+        where: { size: 'throw-error' },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ],
