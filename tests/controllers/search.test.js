@@ -171,7 +171,9 @@ describe('Controllers - ships', () => {
       await getShipsByGTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 100 },
+        where: {
+          size: { [models.Op.gte]: 100 },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ]
@@ -185,7 +187,9 @@ describe('Controllers - ships', () => {
       await getShipsByGTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 'not-found' },
+        where: {
+          size: { [models.Op.gte]: 'not-found' },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ]
@@ -200,7 +204,9 @@ describe('Controllers - ships', () => {
       await getShipsByGTESize(request, response)
 
       expect(stubbedFindAll).to.have.been.calledWith({
-        where: { size: 'throw-error' },
+        where: {
+          size: { [models.Op.gte]: 'throw-error' },
+        },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
         ]
