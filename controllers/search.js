@@ -1,7 +1,9 @@
 const models = require('../models')
+const shipInfo = require('../shipInfo')
+const manuInfo = require('../manu')
 
 const getIndex = (req, res) => {
-  return res.render('index', { model: models.Ships.findAll })
+  return res.render('index', { shipInfo, manuInfo })
 }
 
 const getAllShips = async (req, res) => {
@@ -27,6 +29,8 @@ const getShipById = async (req, res) => {
     })
 
     return foundShip
+      ? res.send(foundShip)
+      : res.sendStatus(404)
   } catch (error) {
     return res.status(500).send('Unable to retrieve ship, please try again')
   }

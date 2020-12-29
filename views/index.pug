@@ -4,7 +4,7 @@ html
     div.sidebar
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
-        a(href=`/#shipIds`)=`IDs`
+        a(href=`/#shipIds`)=`IDs & Slugs`
         a(href=`/#manufacturers`)=`Manufacturers`
         a(href="/#classes")=`Classes`
 
@@ -71,12 +71,18 @@ html
                 td Delete a ships record
 
 
-        <h3 id='shipIds', class= 'titles'> Ship IDs </h3>
+        <h3 id='shipIds', class= 'titles'> Ship IDs & Slugs </h3>
         table  
             tr
                 th ID
-                th Ship
+                th Ship Name
                 th Slug
+
+            for ship in shipInfo
+                tr
+                    td= ship.id
+                    td= ship.name
+                    td= ship.slug
             
 
 
@@ -86,57 +92,10 @@ html
         table  
             tr
                 th Starship Manufacturers
-                th Searchable Name
-            tr 
-                td Corellian Engineering Corp
-                td cec
-            tr 
-                td Cygnus Spaceworks
-                td cygnus-spaceworks
-            tr 
-                td Olanji-Charubah
-                td olanji-charubah
-            tr 
-                td Hoersh-Kessel Drive
-                td hkd
-            tr 
-                td Incom Corporation
-                td incom-corp
-            tr 
-                td Kuat Drive Yards
-                td kdy
-            tr 
-                td Kuat Systems Engineering
-                td kse
-            tr 
-                td Loronar Corp.
-                td lonar-corp
-            tr 
-                td Mon Calmari Shipyards
-                td mcs
-            tr 
-                td Mandal Motors
-                td mandal-motors
-            tr 
-                td Repuiblic Engineering Corp.
-                td rec
-            tr
-                td Rendili StarDrive
-                td rendili-stradrive
-            tr
-                td Sienar Fleet Systems
-                td sfs
-            tr
-                td Silviut Corp.
-                td silviut-corp
-            tr
-                td SoroSuub
-                td sorosuub
-            tr
-                td Ssi-Ruuk
-                td ssi-ruuk
-            tr
-                td Telgorn Corp.
-                td telgorn-corp
+
+            for manu in manuInfo
+                tr
+                    td= manu.manufacturer
+
                 
         </div>
