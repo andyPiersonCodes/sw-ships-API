@@ -67,11 +67,12 @@ describe('Controllers - ships', () => {
   })
 
   describe('getShipById', () => {
-    it('retrieves the ship associated with the provided ID from the database and calls response.send with it', async () => {
+    it('retrieves the ship associated with the provided ID from the database and calls response.send() with the list', async () => {
       stubbedFindOne.returns(singleShip)
       const request = { params: { id: 2 } }
 
       await getShipById(request, response)
+
       expect(stubbedFindOne).to.have.been.calledWith({
         where: { id: 2 },
         include: [{ model: models.Weapons, attributes: ['name'] },
@@ -123,7 +124,7 @@ describe('Controllers - ships', () => {
 
       expect(stubbedFindAll).to.have.been.calledWith({
         where: {
-          slug: { [models.Op.like]: 'aa-9-coruscant-freighter' },
+          slug: { [models.Op.like]: '%aa-9-coruscant-freighter%' },
         },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
@@ -132,7 +133,7 @@ describe('Controllers - ships', () => {
       expect(stubbedSend).to.have.been.calledWith(singleShip)
     })
 
-    it('see empty array when  null  is  called', async () => {
+    it('see empty array when null is called', async () => {
       stubbedFindAll.returns(null)
       const request = { params: { slug: 'not-found' }, }
 
@@ -149,7 +150,7 @@ describe('Controllers - ships', () => {
 
       expect(stubbedFindAll).to.have.been.calledWith({
         where: {
-          slug: { [models.Op.like]: 'throw-error' },
+          slug: { [models.Op.like]: '%throw-error%' },
         },
         include: [{ model: models.Weapons, attributes: ['name'] },
           { model: models.Affiliations, attributes: ['name'] }
