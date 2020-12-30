@@ -5,9 +5,6 @@ USE starWars;
 
 DROP DATABASE starWars;
 
-CREATE USER 'sithLord'@'localhost' IDENTIFIED BY 'GLucas514!';
-
-GRANT ALL ON starWars.* TO 'sithLord'@'localhost';
 
 SHOW TABLES;
 
