@@ -5,8 +5,8 @@ html
         a(href=`/`)= `Home`
         a(href=`/ships`)=`All Ships`
         a(href=`/#shipIds`)=`IDs & Slugs`
+        a(href="/#shipClasses")=`Classes`
         a(href=`/#manufacturers`)=`Manufacturers`
-        a(href="/#classes")=`Classes`
 
     div.content
         <img src="./images/sw-logo2.png">
@@ -70,7 +70,6 @@ html
                 td /ships/#
                 td Delete a ships record
 
-
         <h3 id='shipIds', class= 'titles'> Ship IDs & Slugs </h3>
         table  
             tr
@@ -80,18 +79,21 @@ html
 
             for ship in shipInfo
                 tr
-                    td= ship.id
+                    td.methods= ship.id
                     td= ship.name
                     td= ship.slug
-            
+
+        <h3 id='shipClasses', class= 'titles'> Ship Classes </h3>
+        table
+
+            for shipType in classInfo
+                tr
+                    td= shipType.shipClass
 
 
 
-
-        <h3 id='manufacturers', class= 'titles'> Manufacturers </h3>
-        table  
-            tr
-                th Starship Manufacturers
+        <h3 id='manufacturers', class= 'titles'> Starship Manufacturers </h3>
+        table
 
             for manu in manuInfo
                 tr

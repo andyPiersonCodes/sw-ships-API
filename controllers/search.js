@@ -1,9 +1,10 @@
 const models = require('../models')
 const shipInfo = require('../shipInfo')
 const manuInfo = require('../manu')
+const classInfo = require('../shipClasses')
 
 const getIndex = (req, res) => {
-  return res.render('index', { shipInfo, manuInfo })
+  return res.render('index', { shipInfo, manuInfo, classInfo })
 }
 
 const getAllShips = async (req, res) => {
