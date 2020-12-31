@@ -1,0 +1,32 @@
+html
+    include partials/head.pug
+    body
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        a(href=`./ids`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
+
+    div.content
+        h1 Ships (test table)
+            table
+                tr
+                    th ID
+                    th Name
+                    th Manufacturer
+                    th Class
+                    th Size (in meters)
+                    th Uniqueness
+                    th Slug
+
+                for ships in Ships
+                tr
+                    td ship.id
+                    td ship.name
+                    td ship.manufacture
+                    td ship.shipClass
+                    td ship.size
+                    td ship.isUnique
+                    td ship.slug
+
