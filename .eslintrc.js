@@ -1,16 +1,17 @@
 module.exports = {
-  "env": {
-    "es6": true,
-    "node": true,
-  },
+  "env": { "es6": true, "node": true, "browser": true },
   "extends": "eslint:recommended",
+  "extends": "airbnb",
   "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "plugins": ["react"],
   "rules": {
     "array-bracket-spacing": ["error", "never"],
     "array-element-newline": ["error", "consistent"],
+    "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "block-spacing": "error",
     "camelcase": 0,
@@ -23,6 +24,7 @@ module.exports = {
     "function-paren-newline": ["error", "never"],
     "implicit-arrow-linebreak": ["error", "beside"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-a11y/label-has-for": 0,
     "key-spacing": ["error", { "afterColon": true }],
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "linebreak-style": ["error", "unix"],
@@ -47,6 +49,8 @@ module.exports = {
       { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
       { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
     ],
+    "react/prop-types": 0,
+    "semi": ["error", "never"],
     "quotes": ["error", "single"],
     "rest-spread-spacing": ["error", "never"],
     "space-before-blocks": "error",
