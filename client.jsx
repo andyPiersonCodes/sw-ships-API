@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { render } from 'react-dom'
-import ??? from './components/???'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import HomePage from './pages/Home'
 
-render(<??? />,
-    document.getElementById('root'))
+render(<HomePage />,
+  document.getElementById('root'))
