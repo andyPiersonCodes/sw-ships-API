@@ -2,11 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Page = styled.div `
-  margin: 60px auto 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: #f1f1f1;
+  margin: 0;
   text-align: center;
-  width: 60%;
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
   `
 
 export default ({ children }) => (
-  <Page>{children}</Page>
+  <Page>
+    {children}
+  </Page>
 )

@@ -64,6 +64,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./components/APIRefs.jsx":
+/*!********************************!*\
+  !*** ./components/APIRefs.jsx ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n\n\nconst Table = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.table`\n    border-collapse: collapse;\n    margin: 0 auto;\n    padding: 10px;\n`;\nconst H3 = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div`\n    padding-top: 3em;\n    padding-bottom: 1em;\n    font-size: 2em;\n`;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(H3, null, \"API References\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Table, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"tr\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"th\", null, \"Method\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"th\", null, \"Reference\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"th\", null, \"Purpose\")))));\n\n//# sourceURL=webpack://sw-ships-api/./components/APIRefs.jsx?");
+
+/***/ }),
+
+/***/ "./components/Image.jsx":
+/*!******************************!*\
+  !*** ./components/Image.jsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n\n\nconst Img = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.img`\n    background: url(./sw-logo2.png)\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n    width: 65%;\n`;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  /*#__PURE__*/\n  react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Img, null));\n});\n\n//# sourceURL=webpack://sw-ships-api/./components/Image.jsx?");
+
+/***/ }),
+
 /***/ "./components/Page.jsx":
 /*!*****************************!*\
   !*** ./components/Page.jsx ***!
@@ -71,7 +93,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n\n\nconst Page = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div`\n  margin: 60px auto 0;\n  text-align: center;\n  width: 60%;\n  `;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({\n  children\n}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Page, null, children));\n\n//# sourceURL=webpack://sw-ships-api/./components/Page.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n\n\nconst Page = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div`\n  font-family: Arial, Helvetica, sans-serif;\n  background-color: black;\n  color: #f1f1f1;\n  margin: 0;\n  text-align: center;\n  margin-left: 200px;\n  padding: 1px 16px;\n  height: 1000px;\n  `;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({\n  children\n}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Page, null, children));\n\n//# sourceURL=webpack://sw-ships-api/./components/Page.jsx?");
+
+/***/ }),
+
+/***/ "./components/Sidebar.jsx":
+/*!********************************!*\
+  !*** ./components/Sidebar.jsx ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ \"./node_modules/styled-components/dist/styled-components.browser.esm.js\");\n\n\nconst Sidebar = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div`\n    margin: 0;\n    padding: 0;\n    width: 200px;\n    background-color: #464647;\n    position: fixed;\n    height: 100%;\n    overflow: auto;\n    font-size: 1.2em;\n\n`;\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  /*#__PURE__*/\n  react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Sidebar, null));\n});\n\n//# sourceURL=webpack://sw-ships-api/./components/Sidebar.jsx?");
 
 /***/ }),
 
@@ -93,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Page */ \"./components/Page.jsx\");\n/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Title */ \"./components/Title.jsx\");\n/* eslint-disable no-unused-vars */\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_1__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_2__.default, null)));\n\n//# sourceURL=webpack://sw-ships-api/./pages/Home.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Page */ \"./components/Page.jsx\");\n/* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Image */ \"./components/Image.jsx\");\n/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Title */ \"./components/Title.jsx\");\n/* harmony import */ var _components_Sidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Sidebar */ \"./components/Sidebar.jsx\");\n/* harmony import */ var _components_APIRefs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/APIRefs */ \"./components/APIRefs.jsx\");\n/* eslint-disable no-unused-vars */\n\n\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_1__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_3__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_APIRefs__WEBPACK_IMPORTED_MODULE_5__.default, null)));\n\n//# sourceURL=webpack://sw-ships-api/./pages/Home.jsx?");
 
 /***/ }),
 
