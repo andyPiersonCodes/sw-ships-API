@@ -15,6 +15,11 @@ const Sidebar = styled.div `
 
 export default () => {
   <>
-    <Sidebar />
+    <Sidebar>
+      <a href="/">Home</a>
+      <a href="/">Ships</a>
+      <a href="/">Ship Classes</a>
+      <a href="/">Manufacturers</a>
+    </Sidebar>
   </>
 }

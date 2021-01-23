@@ -9,6 +9,7 @@ import Table from '../components/APIRefs'
 
 export default () => (
   <Page>
+    <img src="./images/sw-logo2.png" alt="star wars logo" />
     <Title />
     <Table />
     <JsonExample />

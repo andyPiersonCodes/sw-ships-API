@@ -7,9 +7,15 @@ const Table = styled.table `
     padding: 10px;
     font-size: 1.5vw;
 `
+const CellRef = styled.th `
+  font-size: 1vw;
+  padding: 10px;
+  color: darkorange;
+`
+
 const Cell = styled.th `
-font-size: 1vw;
-padding: 10px;
+  font-size: 1vw;
+  padding: 10px;
 `
 
 const H3 = styled.div `
@@ -28,37 +34,37 @@ export default () => (
         <th>Purpose</th>
       </tr>
       <tr>
-        <Cell>GET</Cell>
+        <CellRef>GET</CellRef>
         <Cell>/api/ships</Cell>
         <Cell>Return JSON of all ships</Cell>
       </tr>
       <tr>
-        <Cell>GET</Cell>
+        <CellRef>GET</CellRef>
         <Cell>/api/ships/id/#</Cell>
         <Cell>Return JSON of a ship by id</Cell>
       </tr>
       <tr>
-        <Cell>GET</Cell>
+        <CellRef>GET</CellRef>
         <Cell>/api/ships/gte/#</Cell>
         <Cell>Return JSON of all ships greater than or equal size requested</Cell>
       </tr>
       <tr>
-        <Cell>GET</Cell>
+        <CellRef>GET</CellRef>
         <Cell>/api/ships/lte/#</Cell>
         <Cell>Return JSON of all ships less than or equal to size requested</Cell>
       </tr>
       <tr>
-        <Cell>GET</Cell>
+        <CellRef>GET</CellRef>
         <Cell>/api/ship/slug</Cell>
         <Cell>Returns a JSON of a fuzzy search of all matching slugs</Cell>
       </tr>
       <tr>
-        <Cell>POST</Cell>
+        <CellRef>POST</CellRef>
         <Cell>/api/ships/</Cell>
         <Cell>Create new ship and add to database</Cell>
       </tr>
       <tr>
-        <Cell>DELETE</Cell>
+        <CellRef>DELETE</CellRef>
         <Cell>/api/ships/#</Cell>
         <Cell>Delete a ships record</Cell>
       </tr>
