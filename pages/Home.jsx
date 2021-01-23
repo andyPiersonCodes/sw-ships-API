@@ -4,11 +4,13 @@ import Page from '../components/Page'
 import Image from '../components/Image'
 import Title from '../components/Title'
 import SideBar from '../components/Sidebar'
+import JsonExample from '../components/JsonExample'
 import Table from '../components/APIRefs'
 
 export default () => (
   <Page>
     <Title />
     <Table />
+    <JsonExample />
   </Page>
 )

@@ -9,7 +9,7 @@ const Page = styled.div `
   text-align: center;
   margin-left: 200px;
   padding: 1px 16px;
-  height: 1000px;
+  height: 100%;
   `
 
 export default ({ children }) => (
