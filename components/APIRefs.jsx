@@ -8,7 +8,7 @@ const Table = styled.table `
     font-size: 1.5vw;
 `
 const CellRef = styled.th `
-  font-size: 1vw;
+  font-size: 1.2vw;
   padding: 10px;
   color: darkorange;
 `
