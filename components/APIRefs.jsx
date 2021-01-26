@@ -7,13 +7,13 @@ const Table = styled.table `
     padding: 10px;
     font-size: 1.5vw;
 `
-const CellRef = styled.th `
+const CellRef = styled.td `
   font-size: 1.2vw;
   padding: 10px;
   color: darkorange;
 `
 
-const Cell = styled.th `
+const Cell = styled.td `
   font-size: 1vw;
   padding: 10px;
 `
