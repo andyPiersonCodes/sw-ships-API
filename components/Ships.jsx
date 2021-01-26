@@ -13,6 +13,6 @@ const Link = styled(NavLink) `
 
 export default ({ id, name, slug }) => (
   <Ship key={id}>
-    <Link to={`/ships/${id}`}>{`${id} ${name} ${slug}`}</Link>
+    {`${id} ${name} ${slug}`}
   </Ship>
 )

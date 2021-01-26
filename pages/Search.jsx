@@ -31,6 +31,7 @@ export default () => {
     <Page>
       <SideBar />
       <Search term={searchTerm} setter={setSearchTerm} />
+      <p>ID    NAME    SLUG</p>
       {
         filteredShipList.map(ship => (
           <Ship

@@ -9,5 +9,5 @@ const Link = styled(NavLink) `
 `
 
 export default () => (
-  <Link to="/">&lt;&lt; Go Back</Link>
+  <Link to="/search">&lt;&lt; Go Back</Link>
 )
