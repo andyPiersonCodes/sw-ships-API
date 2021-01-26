@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import Page from '../components/Page'
 import Subpage from '../components/Subpage'
-import Image from '../components/Image'
 import Title from '../components/Title'
 import SideBar from '../components/Sidebar'
 import JsonExample from '../components/JsonExample'

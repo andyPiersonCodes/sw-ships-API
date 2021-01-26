@@ -14,7 +14,7 @@ const Message = styled.div `
 
 export default ({ message }) => (
   <>
-    <Icon>¯\_(ツ)_/¯</Icon>
+    <Icon>|-o-|</Icon>
     <Message>{message}</Message>
   </>
 )

@@ -28,9 +28,9 @@ app.get('/api/ships/gte/:size', getShipsByGTESize)
 
 app.get('/api/ships/lte/:size', getShipsByLTESize)
 
-app.post('/ships', bodyParser.json(), saveNewShip)
+app.post('/api/ships', bodyParser.json(), saveNewShip)
 
-app.delete('api//ships/:id', deleteShip)
+app.delete('/api/ships/:id', deleteShip)
 
 app.all('*', (req, res) => res.sendFile(path.resolve(__dirname, 'public', 'index.html')))
 

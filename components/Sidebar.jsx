@@ -13,14 +13,21 @@ const Sidebar = styled.div `
     overflow: auto;
     font-size: 1.2em;
     text-align: left;
-    
+`
+
+const StyledLink = styled(Link) `
+  &:visited {color: white}
+  text-decoration: none;
 `
 
 export default () => (
   <Sidebar>
     <ProSidebar>
       <Menu title="LINKS">
-        <MenuItem style={{ listStyleType: 'none' }}>SEARCH SHIPS</MenuItem>
+        <MenuItem style={{ listStyleType: 'none' }}><StyledLink to="/">HOME</StyledLink></MenuItem>
+        <MenuItem style={{ listStyleType: 'none' }}>
+          <StyledLink to="/search">SEARCH SHIPS</StyledLink>
+        </MenuItem>
         <MenuItem style={{ listStyleType: 'none' }}>IDs / SLUGS</MenuItem>
         <MenuItem style={{ listStyleType: 'none' }}>CLASSES</MenuItem>
         <MenuItem style={{ listStyleType: 'none' }}>AFFILIATIONS</MenuItem>
