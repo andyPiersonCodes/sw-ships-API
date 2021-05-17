@@ -1,0 +1,22 @@
+html
+    include partials/head.pug
+    body
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        a(href= `index/#shipIds`)=`IDs`
+        a(href=`/#manufacturers`)=`Manufacturers`
+        a(href="/#classes")=`Classes`
+
+    
+    h1.titles Ship IDs
+        table
+            tr
+                th ID
+                th Ship
+            tr
+                td 1
+                td Nebulon B
+            tr
+                td 2
+                td Star Destroyer

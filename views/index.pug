@@ -1,0 +1,114 @@
+html
+    include partials/head.pug
+    body
+    div.sidebar
+        a(href=`/`)= `Home`
+        a(href=`/ships`)=`All Ships`
+        a(href=`/#shipIds`)=`IDs & Slugs`
+        a(href="/#shipClasses")=`Classes`
+        a(href=`/#manufacturers`)=`Manufacturers`
+
+    div.content
+        <img src="./images/sw-logo2.png">
+        h1.mainTitle THE API
+        h2.titles Introduction
+            p.refs This API is about helping you find the perfect Star Wars ship for you.
+            p.refs Currently serving up 
+                span 149 
+                |ships, from 
+                span 52 
+                |manufacturers, in 
+                span 27 
+                |classes, with 
+                span 26 
+                |faction affiliations
+            
+    
+        h3.titles API References
+
+        table
+            tr
+                th Method
+                th Reference
+                th Purpose
+            
+            tr
+                td.methods GET
+                td /ships
+                td Return JSON of all ships
+            
+            tr
+                td.methods GET
+                td /ships/id/#
+                td Return JSON of a ship by id
+
+            tr
+                td.methods GET
+                td /ships/gte/#
+                td Return JSON of all ships greater than or equal size requested
+
+            tr
+                td.methods GET
+                td /ships/lte/#
+                td Return JSON of all ships less than or equal to size requested
+
+            tr 
+                td.methods GET
+                td /ship/slug
+                td Returns a JSON of a fuzzy search of all matching slugs
+          
+            tr
+                td.methods POST
+                td /ships/
+                td Create new ship and add to database
+
+            tr.end
+                td.methods DELETE
+                td /ships/#
+                td Delete a ships record
+
+        h3.titles Sample Slug API Call
+            p.refs http://localhost:port/ships/147
+
+        div
+            p.jsonExample name: 'Nebulon B',
+            p.jsonExample manufacturer: 'Kuat Drive Yards',
+            p.jsonExample shipClass: 'Frigate',
+            p.jsonExample size: 300,
+            p.jsonExample weapons: ['turbo lasers', 'laser cannons', 'tractor beams'],
+            p.jsonExample affiliations: ['Imperial', 'Rebels', 'New Republic', 'pirates', 'civilian'],
+            p.jsonExample isUnique: 'No',
+            p.jsonExample slug: 'nebulon-b',
+        
+
+        <h3 id='shipIds', class= 'titles'> Ship IDs & Slugs </h3>
+        table  
+            tr
+                th ID
+                th Ship Name
+                th Slug
+
+            for ship in shipInfo
+                tr
+                    td.methods= ship.id
+                    td= ship.name
+                    td= ship.slug
+
+        <h3 id='shipClasses', class= 'titles'> Ship Classes </h3>
+        table
+
+            for shipType in classInfo
+                tr
+                    td= shipType.shipClass
+
+
+
+        <h3 id='manufacturers', class= 'titles'> Starship Manufacturers </h3>
+        table
+
+            for manu in manuInfo
+                tr
+                    td= manu.manufacturer
+
+                
+        </div>
