@@ -12,6 +12,7 @@ import {
   getShipsByGTESize,
   getShipsByLTESize,
   getShipByClass,
+  getUniques,
 } from './controllers/ships'
 
 const port = 1338
@@ -27,6 +28,8 @@ app.get('/api/ships/id/:id', getShipById)
 app.get('/api/ships/:slug', getShipsBySlug)
 
 app.get('/api/ships/class/:shipClass', getShipByClass)
+
+app.get('/api/ships/special/:unique', getUniques)
 
 app.get('/api/ships/gte/:size', getShipsByGTESize)
 

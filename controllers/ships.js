@@ -12,6 +12,7 @@ const getIndex = (req, res) => {
 
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
+    attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
     include: [{ model: models.Weapons, attributes: ['name'] },
       { model: models.Affiliations, attributes: ['name'] },
     ],
@@ -79,10 +80,10 @@ const getShipByClass = async (req, res) => {
 
 const getUniques = async (req, res) => {
   try {
-    const { uniqueness } = req.params
+    const { unique } = req.params
 
     const foundShip = await models.Ships.findOne({
-      where: { uniqueness },
+      where: { unique },
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
