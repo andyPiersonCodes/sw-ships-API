@@ -64,11 +64,9 @@ const getShipByClass = async (req, res) => {
   try {
     const { shipClass } = req.params
 
-    const foundShip = await models.Ships.findOne({
+    const foundShip = await models.Ships.findAll({
       where: { shipClass },
-      include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
-      ],
+      include: { model: models.Weapons, attributes: ['name'] },
     })
 
     return foundShip

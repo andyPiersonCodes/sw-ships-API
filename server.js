@@ -39,8 +39,6 @@ app.put('/api/ships/:id', bodyParser.json(), updateShip)
 
 // Add Manufacturers routes
 
-// Add ship classes routes
-
 // Add isUnique routes
 
 // Add faction routes
