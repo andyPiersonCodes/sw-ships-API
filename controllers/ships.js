@@ -85,8 +85,8 @@ const getUniques = async (req, res) => {
   try {
     const { unique } = req.params
 
-    const foundShip = await models.Ships.findOne({
-      where: { unique },
+    const foundShip = await models.Ships.findAll({
+      where: { isUnique: unique },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
