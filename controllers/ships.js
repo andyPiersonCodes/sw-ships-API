@@ -27,6 +27,7 @@ const getShipById = async (req, res) => {
 
     const foundShip = await models.Ships.findOne({
       where: { id },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
@@ -48,6 +49,7 @@ const getShipsBySlug = async (req, res) => {
       where: {
         slug: { [models.Op.like]: `%${slug}%` },
       },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
@@ -67,6 +69,7 @@ const getShipByClass = async (req, res) => {
 
     const foundShip = await models.Ships.findAll({
       where: { shipClass },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: { model: models.Weapons, attributes: ['name'] },
     })
 
@@ -84,6 +87,7 @@ const getUniques = async (req, res) => {
 
     const foundShip = await models.Ships.findOne({
       where: { unique },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
@@ -105,6 +109,7 @@ const getShipsByGTESize = async (req, res) => {
       where: {
         size: { [models.Op.gte]: size },
       },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
@@ -126,6 +131,7 @@ const getShipsByLTESize = async (req, res) => {
       where: {
         size: { [models.Op.lte]: size },
       },
+      attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
         { model: models.Affiliations, attributes: ['name'] },
       ],
