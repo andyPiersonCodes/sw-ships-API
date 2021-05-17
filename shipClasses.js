@@ -1,86 +1,86 @@
 const shipType = [{
 
-  shipClass: 'assault-ship'
+  shipClass: 'assault-ship',
 },
 {
-  shipClass: 'battleship'
+  shipClass: 'battleship',
 },
 {
-  shipClass: 'bomber'
+  shipClass: 'bomber',
 },
 {
-  shipClass: 'carrier'
+  shipClass: 'carrier',
 },
 {
-  shipClass: 'corvette'
+  shipClass: 'corvette',
 },
 {
-  shipClass: 'courier'
+  shipClass: 'courier',
 },
 {
-  shipClass: 'cruiser-heavy'
+  shipClass: 'cruiser-heavy',
 },
 {
-  shipClass: 'cruiser-light'
+  shipClass: 'cruiser-light',
 },
 {
-  shipClass: 'cruiser-medium'
+  shipClass: 'cruiser-medium',
 },
 {
-  shipClass: 'destroyer'
+  shipClass: 'destroyer',
 },
 {
-  shipClass: 'dreadnaught'
+  shipClass: 'dreadnaught',
 },
 {
-  shipClass: 'escort-vehicle'
+  shipClass: 'escort-vehicle',
 },
 {
-  shipClass: 'freighter'
+  shipClass: 'freighter',
 },
 {
-  shipClass: 'frigate'
+  shipClass: 'frigate',
 },
 {
-  shipClass: 'gunship'
+  shipClass: 'gunship',
 },
 {
-  shipClass: 'interceptor'
+  shipClass: 'interceptor',
 },
 {
-  shipClass: 'luxury-space-yacht'
+  shipClass: 'luxury-space-yacht',
 },
 {
-  shipClass: 'miner'
+  shipClass: 'miner',
 },
 
 {
-  shipClass: 'patrol-ship'
+  shipClass: 'patrol-ship',
 },
 {
-  shipClass: 'scout-vessel'
+  shipClass: 'scout-vessel',
 },
 {
-  shipClass: 'starfighter'
+  shipClass: 'starfighter',
 },
 {
-  shipClass: 'station'
+  shipClass: 'station',
 },
 {
-  shipClass: 'super-weapon'
+  shipClass: 'super-weapon',
 },
 {
-  shipClass: 'survey'
+  shipClass: 'survey',
 },
 {
-  shipClass: 'transport'
+  shipClass: 'transport',
 },
 {
-  shipClass: 'tug'
+  shipClass: 'tug',
 },
 {
-  shipClass: 'yacht'
-}
+  shipClass: 'yacht',
+},
 ]
 
 module.exports = shipType

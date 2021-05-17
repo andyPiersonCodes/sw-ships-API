@@ -1,159 +1,159 @@
 const manufacturers = [
   {
-    manufacturer: 'Alderaan Royal Engineering'
+    manufacturer: 'Alderaan Royal Engineering',
   },
   {
-    manufacturer: 'Bespin Motors'
+    manufacturer: 'Bespin Motors',
   },
   {
-    manufacturer: 'Bolzi Design'
+    manufacturer: 'Bolzi Design',
   },
   {
-    manufacturer: 'Botajef Shipyards'
+    manufacturer: 'Botajef Shipyards',
   },
   {
-    manufacturer: 'Byblos Drive Yards'
+    manufacturer: 'Byblos Drive Yards',
   },
   {
-    manufacturer: 'Chiss Ascendancy'
+    manufacturer: 'Chiss Ascendancy',
   },
   {
-    manufacturer: 'Core Galaxy Systems'
+    manufacturer: 'Core Galaxy Systems',
   },
   {
-    manufacturer: 'Corellia StarDrive'
+    manufacturer: 'Corellia StarDrive',
   },
   {
-    manufacturer: 'Correllian Engineering Corporation'
+    manufacturer: 'Correllian Engineering Corporation',
   },
   {
-    manufacturer: 'Cygnus spaceworks'
+    manufacturer: 'Cygnus spaceworks',
   },
   {
-    manufacturer: 'Damorian Manufacturing Corporation'
+    manufacturer: 'Damorian Manufacturing Corporation',
   },
   {
-    manufacturer: 'Feethan Ottraw Scalable Assemblies'
+    manufacturer: 'Feethan Ottraw Scalable Assemblies',
   },
   {
-    manufacturer: 'Freitek'
+    manufacturer: 'Freitek',
   },
   {
-    manufacturer: 'Galactic Empire'
+    manufacturer: 'Galactic Empire',
   },
   {
-    manufacturer: 'Gallofree Yards'
+    manufacturer: 'Gallofree Yards',
   },
   {
-    manufacturer: 'Haor Chall Engineering'
+    manufacturer: 'Haor Chall Engineering',
   },
   {
-    manufacturer: 'Hoersch-Kessel'
+    manufacturer: 'Hoersch-Kessel',
   },
   {
-    manufacturer: 'Huppla Pasa Tisc'
+    manufacturer: 'Huppla Pasa Tisc',
   },
   {
-    manufacturer: 'Imperial Remnant'
+    manufacturer: 'Imperial Remnant',
   },
   {
-    manufacturer: 'Incom Corporation'
+    manufacturer: 'Incom Corporation',
   },
   {
-    manufacturer: 'Ithullian'
+    manufacturer: 'Ithullian',
   },
   {
-    manufacturer: 'Kalevala Spaceworks'
+    manufacturer: 'Kalevala Spaceworks',
   },
   {
-    manufacturer: 'Killik'
+    manufacturer: 'Killik',
   },
   {
-    manufacturer: 'Koensayr'
+    manufacturer: 'Koensayr',
   },
   {
-    manufacturer: 'Kuat Drive Yards'
+    manufacturer: 'Kuat Drive Yards',
   },
   {
-    manufacturer: 'Kuat Systems Engineering'
+    manufacturer: 'Kuat Systems Engineering',
   },
   {
-    manufacturer: 'Latero Spaceworks'
+    manufacturer: 'Latero Spaceworks',
   },
   {
-    manufacturer: 'Loronar Corporation'
+    manufacturer: 'Loronar Corporation',
   },
   {
-    manufacturer: 'Mandal Motors'
+    manufacturer: 'Mandal Motors',
   },
   {
-    manufacturer: 'Mon Calmari Shipyards'
+    manufacturer: 'Mon Calmari Shipyards',
   },
   {
-    manufacturer: 'Mobquet'
+    manufacturer: 'Mobquet',
   },
   {
-    manufacturer: 'Olanji-Charubah'
+    manufacturer: 'Olanji-Charubah',
   },
   {
-    manufacturer: 'Rakatan Infinite Empire'
+    manufacturer: 'Rakatan Infinite Empire',
   },
   {
-    manufacturer: 'Rendili StarDrive'
+    manufacturer: 'Rendili StarDrive',
   },
   {
-    manufacturer: 'Republic Engineering Corp'
+    manufacturer: 'Republic Engineering Corp',
   },
   {
-    manufacturer: 'Republic Fleet Systems'
+    manufacturer: 'Republic Fleet Systems',
   },
   {
-    manufacturer: 'Republic Sienar Systems'
+    manufacturer: 'Republic Sienar Systems',
   },
   {
-    manufacturer: 'Rothana Heavy Engineering'
+    manufacturer: 'Rothana Heavy Engineering',
   },
   {
-    manufacturer: 'Slayn & Korpil'
+    manufacturer: 'Slayn & Korpil',
   },
   {
-    manufacturer: 'Sienar Fleet Systems'
+    manufacturer: 'Sienar Fleet Systems',
   },
   {
-    manufacturer: 'Sienar-Jaemus Army Systems'
+    manufacturer: 'Sienar-Jaemus Army Systems',
   },
   {
-    manufacturer: 'Sorosuub'
+    manufacturer: 'Sorosuub',
   },
   {
-    manufacturer: 'Ssi-Ruuvi'
+    manufacturer: 'Ssi-Ruuvi',
   },
   {
-    manufacturer: 'Subpro Corporation'
+    manufacturer: 'Subpro Corporation',
   },
   {
-    manufacturer: 'Surronian'
+    manufacturer: 'Surronian',
   },
   {
-    manufacturer: 'Techno Union'
+    manufacturer: 'Techno Union',
   },
   {
-    manufacturer: 'Tenloss Syndicate'
+    manufacturer: 'Tenloss Syndicate',
   },
   {
-    manufacturer: 'Theed Palace Space Vessel Engineering Corps'
+    manufacturer: 'Theed Palace Space Vessel Engineering Corps',
   },
   {
-    manufacturer: 'TransGalMeg'
+    manufacturer: 'TransGalMeg',
   },
   {
-    manufacturer: 'Trilon'
+    manufacturer: 'Trilon',
   },
   {
-    manufacturer: 'Ubrikkian'
+    manufacturer: 'Ubrikkian',
   },
   {
-    manufacturer: 'unknown'
+    manufacturer: 'unknown',
   }]
 
 module.exports = manufacturers

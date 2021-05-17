@@ -3,6 +3,7 @@ const allConfigs = require('../config/sequelize')
 const ShipsModel = require('./ships')
 const WeaponsModel = require('./weapons')
 const AffiliationsModel = require('./affiliations')
+
 const environment = process.env.NODE_ENV || 'development'
 const config = allConfigs[environment]
 

@@ -1,3 +1,6 @@
+/* eslint-disable arrow-body-style */
+// eslint-disable-next-line no-unused-vars
+const bodyParser = require('body-parser')
 const models = require('../models')
 const shipInfo = require('../shipInfo')
 const manuInfo = require('../manu')
@@ -10,13 +13,12 @@ const getIndex = (req, res) => {
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
     include: [{ model: models.Weapons, attributes: ['name'] },
-      { model: models.Affiliations, attributes: ['name'] }
+      { model: models.Affiliations, attributes: ['name'] },
     ],
   })
 
   return res.send(ships)
 }
-
 
 const getShipById = async (req, res) => {
   try {
@@ -25,7 +27,7 @@ const getShipById = async (req, res) => {
     const foundShip = await models.Ships.findOne({
       where: { id },
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] }
+        { model: models.Affiliations, attributes: ['name'] },
       ],
     })
 
@@ -46,7 +48,7 @@ const getShipsBySlug = async (req, res) => {
         slug: { [models.Op.like]: `%${slug}%` },
       },
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] }
+        { model: models.Affiliations, attributes: ['name'] },
       ],
     })
 
@@ -67,7 +69,7 @@ const getShipsByGTESize = async (req, res) => {
         size: { [models.Op.gte]: size },
       },
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] }
+        { model: models.Affiliations, attributes: ['name'] },
       ],
     })
 
@@ -88,7 +90,7 @@ const getShipsByLTESize = async (req, res) => {
         size: { [models.Op.lte]: size },
       },
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] }
+        { model: models.Affiliations, attributes: ['name'] },
       ],
     })
 
@@ -100,19 +102,17 @@ const getShipsByLTESize = async (req, res) => {
   }
 }
 
-
 const saveNewShip = async (req, res) => {
   const {
-    name, shipClass, size, manufacturer, isUnique, slug
+    name, shipClass, size, manufacturer, isUnique, slug,
   } = req.body
 
   if (!name || !shipClass || !size || !manufacturer || !isUnique || !slug) {
     return res.status(400).send('Error need all fields')
   }
 
-
   const newShip = await models.Ships.create({
-    name, shipClass, size, manufacturer, isUnique, slug
+    name, shipClass, size, manufacturer, isUnique, slug,
   })
 
   return res.status(201).send(newShip)
@@ -133,6 +133,27 @@ const deleteShip = async (req, res) => {
   }
 }
 
+const updateShip = async (req, res) => {
+  try {
+    const { id } = req.params
+    const {
+      name, shipClass, size, manufacturer, isUnique, slug,
+    } = req.body
+
+    const ship = await models.Ships.findOne({ where: { id } })
+
+    if (!ship) return res.status(404).send(`Can't update ship with id: ${id}`)
+    await models.Ships.update({
+      name, shipClass, size, manufacturer, isUnique, slug,
+    }, {
+      where: { id },
+    })
+
+    return res.send(`Successfully updated the ship: ${id}.`)
+  } catch (error) {
+    return res.status(500).send('Unknown error while updating ship, please try again')
+  }
+}
 
 module.exports = {
   getIndex,
@@ -142,5 +163,6 @@ module.exports = {
   getShipsByGTESize,
   getShipsByLTESize,
   saveNewShip,
-  deleteShip
+  deleteShip,
+  updateShip,
 }

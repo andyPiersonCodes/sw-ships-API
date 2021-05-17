@@ -18,7 +18,7 @@ render(
       <Route path="/classes" component={ClassesPage} />
       <Route path="/ids" component={IdsPage} />
       <Route path="/search" component={SearchPage} />
-      <route path="/ships/id" component={ShipsPage} />
+      <Route path="/ships/id" component={ShipsPage} />
       <Route exact path="/" component={HomePage} />
       <Route path="*" component={ErrorPage} />
     </Switch>
