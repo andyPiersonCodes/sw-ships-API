@@ -77,6 +77,25 @@ const getShipByClass = async (req, res) => {
   }
 }
 
+const getUniques = async (req, res) => {
+  try {
+    const { uniqueness } = req.params
+
+    const foundShip = await models.Ships.findOne({
+      where: { uniqueness },
+      include: [{ model: models.Weapons, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'] },
+      ],
+    })
+
+    return foundShip
+      ? res.send(foundShip)
+      : res.sendStatus(404)
+  } catch (error) {
+    return res.status(500).send('Unable to retrieve ship, please try again')
+  }
+}
+
 const getShipsByGTESize = async (req, res) => {
   try {
     const { size } = req.params
@@ -180,6 +199,7 @@ module.exports = {
   getShipByClass,
   getShipsByGTESize,
   getShipsByLTESize,
+  getUniques,
   saveNewShip,
   deleteShip,
   updateShip,
