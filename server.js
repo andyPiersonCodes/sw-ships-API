@@ -44,8 +44,14 @@ app.put('/api/ships/:id', bodyParser.json(), updateShip)
 app.get('/api/affiliations', getAllAffiliations)
 
 // Add Manufacturers routes
+// Add manufacturers table to ships
+
+// add hyper drive linking table and link to ships
+
+// add shipClasses linking table
 
 // Add Affiliation routes
+// Need to add a linking table of Affiliations and ships
 
 // Add weapons routes
 
@@ -60,4 +66,5 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}/api/ships/special/:unique`)
   console.log(`http://localhost:${port}/api/ships/gte/`)
   console.log(`http://localhost:${port}/api/ships/lte/`)
+  console.log(`http://localhost:${port}/api/affiliations`)
 })

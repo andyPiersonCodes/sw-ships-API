@@ -1,8 +1,9 @@
+const Sequelize = require('sequelize')
 const models = require('../models')
 
 const getAllAffiliations = async (req, res) => {
   const affiliations = await models.Affiliations.findAll({
-    attributes: ['id', 'name'],
+    attributes: [[Sequelize.literal('DISTINCT `name`'), 'name'], 'id'],
   })
 
   return res.send(affiliations)
