@@ -14,6 +14,7 @@ import {
   getShipByClass,
   getUniques,
 } from './controllers/ships'
+import { getAllAffiliations } from './controllers/affiliations'
 
 const port = 1338
 
@@ -40,11 +41,11 @@ app.post('/api/ships', bodyParser.json(), saveNewShip)
 app.delete('/api/ships/:id', deleteShip)
 app.put('/api/ships/:id', bodyParser.json(), updateShip)
 
+app.get('/api/affiliations', getAllAffiliations)
+
 // Add Manufacturers routes
 
-// Add isUnique routes
-
-// Add faction routes
+// Add Affiliation routes
 
 // Add weapons routes
 
@@ -55,6 +56,8 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}/api/ships`)
   console.log(`http://localhost:${port}/api/ships/id`)
   console.log(`http://localhost:${port}/api/ships/slug`)
+  console.log(`http://localhost:${port}/api/ships/class/:shipClass`)
+  console.log(`http://localhost:${port}/api/ships/special/:unique`)
   console.log(`http://localhost:${port}/api/ships/gte/`)
   console.log(`http://localhost:${port}/api/ships/lte/`)
 })
