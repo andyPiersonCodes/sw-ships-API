@@ -22,3 +22,15 @@ Affiliations.belongsTo(Ships)
 Ships.hasMany(Affiliations)
 
 module.exports = { Ships, Weapons, Affiliations, Op: Sequelize.Op }
+
+/*
+ENROLLMENTS IS THE LINKING TABLE
+const Products = ProductsModel(connection, Sequelize)
+const Employers = EmployersModel(connection, Sequelize)
+const Members = MembersModel(connection, Sequelize, Employers)
+const Enrollments = EnrollmentsModel(connection, Sequelize, Members, Products)
+
+Employers.hasMany(Members)
+Members.belongsTo(Employers)
+
+*/
