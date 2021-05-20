@@ -1,13 +1,5 @@
 # sw-ships-API
 
-
-You will be building a working API and front-end. This is part 1 of 2.
-Create a new repo in GitHub for your project, make your instructor a collaborator, and clone it locally. Remember to work in and part-one-answer branch, not master
-In this part of your project you will be building the front-end for your API site. The design and content of your front-end is up to you, the only requirements are that it provide documentation for using the API you will be building and that it be built using Pug
-Your first progress check with your instructor will be the week of 11/18
-You should push all progress to GitHub prior to your meeting with the instructor
-Your graded submission for this part will be due on 11/24 before class
-
 Database of Star Wars ships.
 
 # Allows you to search by
@@ -17,9 +9,50 @@ Database of Star Wars ships.
     - All uniques
     - By name
   - Size
-    - Exact (in meters)
     - Larger than (in meters)
     - Smaller than (in meters)
   - Manufacturer
   - Weapons
   - Affiliations
+
+  # ROUTES
+    http://localhost:${port}/api/ships
+    http://localhost:${port}/api/ships/id
+    http://localhost:${port}/api/ships/slug
+    http://localhost:${port}/api/ships/class/:shipClass
+    http://localhost:${port}/api/ships/special/:unique
+    http://localhost:${port}/api/ships/gte/
+    http://localhost:${port}/api/ships/lte/
+    http://localhost:${port}/api/affiliations
+
+  # To be completed
+  - New Tables
+    - Manufacturers table
+      - shipsManufacturers linking table
+    - Affiliations table
+     - shipsAffiliations linking table
+    - shipClasses table
+      - shipsShipsClasses linkingtable
+    - HyperDrive table to ships table
+    - Crew Compliment to ships table
+
+  - Routes
+    - Add Manufacturers routes
+    - Add ShipClasses routes
+    - Add HyperDrive routes
+    - Exact size (in meters)
+
+  - Controllers
+    - Add Manufacturers controllers
+    - Add shipClasses controllers
+    - Add HyperDrive to ships controllers
+    - Add exact size to ships controller
+    - Add crew to ships controller
+
+  - Models
+    - Add Manufacturers model
+    - Add shipClasses model
+    - Add HyperDrive to ships model
+    - Add crew to ships model
+
+
