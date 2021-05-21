@@ -1,4 +1,4 @@
-const Ships_Affiliations = (connection, Sequelize, Ships, Affiliations) => connection.define('affiliations', {
+const Ships_Affiliations = (connection, Sequelize, Ships, Affiliations) => connection.define('ships_affiliations', {
   id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   shipId: { type: Sequelize.INTEGER, references: { model: Ships, key: 'id' } },
   affiliationId: { type: Sequelize.INTEGER, references: { model: Affiliations, key: 'id' } },

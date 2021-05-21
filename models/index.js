@@ -23,7 +23,9 @@ Ships.hasMany(Weapons)
 Ships.belongsToMany(Affiliations, { through: Ships_Affiliations })
 Affiliations.belongsToMany(Ships, { through: Ships_Affiliations })
 
-module.exports = { Ships, Weapons, Affiliations, Ships_Affiliations, Op: Sequelize.Op }
+module.exports = {
+  Ships, Weapons, Affiliations, Ships_Affiliations, Op: Sequelize.Op,
+}
 
 /*
 ENROLLMENTS IS THE LINKING TABLE

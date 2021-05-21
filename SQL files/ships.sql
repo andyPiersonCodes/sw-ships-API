@@ -38,14 +38,23 @@ CREATE TABLE weapons (
 CREATE TABLE  affiliations (
     id INT auto_increment,
     name VARCHAR(255),
-    shipId INT,
     createdAt DATETIME DEFAULT NOW(),
     updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
     deletedAt DATETIME,
     PRIMARY KEY(id),
-    FOREIGN KEY (shipId) REFERENCES ships(id)
 );
 
+CREATE TABLE ships_affiliations (
+    id INT auto_increment,
+    shipId INT,
+    affiliationId INT,
+    createdAt DATETIME DEFAULT NOW(),
+    updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+    deletedAt DATETIME,
+    PRIMARY KEY(id),
+    FOREIGN KEY (shipId) REFERENCES ships(id),
+    FOREIGN KEY(affiliationId) REFERENCES affiliations(id)
+);
 SHOW TABLES;
 
 DESC ships;
