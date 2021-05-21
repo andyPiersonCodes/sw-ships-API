@@ -14,7 +14,12 @@ import {
   getShipByClass,
   getUniques,
 } from './controllers/ships'
-import { getAllAffiliations, getAffiliationsByID, getAffiliationWithShips } from './controllers/affiliations'
+
+import {
+  getAllAffiliations,
+  getAffiliationsByID,
+  getAffiliationWithShips,
+} from './controllers/affiliations'
 
 const port = 1338
 
@@ -47,7 +52,7 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}/api/ships`)
   console.log(`http://localhost:${port}/api/ships/?`)
   console.log(`http://localhost:${port}/api/ships/slug/?`)
-  console.log(`http://localhost:${port}/api/ships/class/:shipClass`)
+  console.log(`http://localhost:${port}/api/ships/class/?`)
   console.log(`http://localhost:${port}/api/ships/special/:unique`)
   console.log(`http://localhost:${port}/api/ships/gte/`)
   console.log(`http://localhost:${port}/api/ships/lte/`)

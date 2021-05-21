@@ -476,7 +476,7 @@ INSERT INTO affiliations (name) VALUES
     ('Tennloss Syndicate'),
     ('Zann Consortium'),
     ('Trade Federation');
-
+DROP TABLE ships_affiliations;
 INSERT INTO ships_affiliations (affiliationId, shipId) VALUES
     (21,1),
     (19,1),
@@ -692,5 +692,15 @@ INSERT INTO ships_affiliations (affiliationId, shipId) VALUES
     (5,144),
     (21,145),
     (20,145),
-    (12,146);
+    (12,146),
+    (5,147),
+    (11,147),
+    (12,147),
+    (19,147),
+    (20,147),
+    (21,147),
+    (8,148),
+    (12,148),
+    (12,149);
+
 
