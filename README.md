@@ -14,23 +14,27 @@ Database of Star Wars ships.
   - Manufacturer
   - Weapons
   - Affiliations
+    - ID
+      - With or without ships attached
 
   # ROUTES
+  ? = variable to enter in route
     http://localhost:${port}/api/ships
-    http://localhost:${port}/api/ships/id
-    http://localhost:${port}/api/ships/slug
-    http://localhost:${port}/api/ships/class/:shipClass
-    http://localhost:${port}/api/ships/special/:unique
-    http://localhost:${port}/api/ships/gte/
-    http://localhost:${port}/api/ships/lte/
+    http://localhost:${port}/api/ships/?
+    http://localhost:${port}/api/ships/slug/?
+    http://localhost:${port}/api/ships/class/?
+    http://localhost:${port}/api/ships/special/? (yes/no)
+    http://localhost:${port}/api/ships/gte/?
+    http://localhost:${port}/api/ships/lte/?
     http://localhost:${port}/api/affiliations
+    http://localhost:${port}/api/affiliations/id/?
+    http://localhost:${port}/api/affiliations/ships
+    
 
   # To be completed
   - New Tables
     - Manufacturers table
       - shipsManufacturers linking table
-    - Affiliations table
-     - shipsAffiliations linking table
     - shipClasses table
       - shipsShipsClasses linkingtable
     - HyperDrive table to ships table
@@ -40,13 +44,11 @@ Database of Star Wars ships.
     - Add Manufacturers routes
     - Add ShipClasses routes
     - Add HyperDrive routes
-    - Exact size (in meters)
 
   - Controllers
     - Add Manufacturers controllers
     - Add shipClasses controllers
     - Add HyperDrive to ships controllers
-    - Add exact size to ships controller
     - Add crew to ships controller
 
   - Models

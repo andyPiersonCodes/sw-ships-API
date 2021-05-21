@@ -13,9 +13,8 @@ const getIndex = (req, res) => {
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
     attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
-    // exclude: [{ model: models.Ships_Affiliations }],
     include: [{ model: models.Weapons, attributes: ['name'] },
-      { model: models.Affiliations, attributes: ['name'] },
+      { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
     ],
   })
 
@@ -30,7 +29,7 @@ const getShipById = async (req, res) => {
       where: { id },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
       ],
     })
 
@@ -52,7 +51,7 @@ const getShipsBySlug = async (req, res) => {
       },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
       ],
     })
 
@@ -90,7 +89,7 @@ const getUniques = async (req, res) => {
       where: { isUnique: unique },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
       ],
     })
 
@@ -112,7 +111,7 @@ const getShipsByGTESize = async (req, res) => {
       },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
       ],
     })
 
@@ -134,7 +133,7 @@ const getShipsByLTESize = async (req, res) => {
       },
       attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
       include: [{ model: models.Weapons, attributes: ['name'] },
-        { model: models.Affiliations, attributes: ['name'] },
+        { model: models.Affiliations, attributes: ['name'], through: { attributes: [] } },
       ],
     })
 
