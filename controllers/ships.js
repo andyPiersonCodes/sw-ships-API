@@ -13,6 +13,7 @@ const getIndex = (req, res) => {
 const getAllShips = async (req, res) => {
   const ships = await models.Ships.findAll({
     attributes: ['id', 'name', 'shipClass', 'size', 'manufacturer', 'isUnique', 'slug'],
+    // exclude: [{ model: models.Ships_Affiliations }],
     include: [{ model: models.Weapons, attributes: ['name'] },
       { model: models.Affiliations, attributes: ['name'] },
     ],
